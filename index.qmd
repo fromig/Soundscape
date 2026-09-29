@@ -1,0 +1,121 @@
+---
+title: "Demo Stylish Article"
+# Output formats
+format:
+  docx:
+    toc: true
+  stylisharticle-pdf:
+    keep-tex: true
+    # Color example, see "Text color"
+    header-includes:
+      \definecolor{grey}{RGB}{191, 191, 191}
+  stylisharticle-html:
+    # Color example, see "Text color"
+    css: colors.css
+# Authors (https://quarto.org/docs/journals/authors.html#author-schema)
+author:
+  - name: Félix Romiguière
+    affiliations:
+      - name: Université de Montpellier
+        department: Scientific Department
+        address: Somewhere
+        city: Montpellier
+        country: France
+        postal-code: 9999
+    orcid: 0000-0000-0000-0000
+    email: felix.romiguiere@etu.umontpellier.fr
+    url: https://example.org/
+# Abstract and Keywords
+abstract: |
+  Document pour le début de rédaction de l'article sur Tahiti Soundscape
+keywords: [template, demo]
+# Bibliography
+reference-section-title: References
+bibliography: references.bib
+# Language
+lang: fr-FR
+otherlangs: en-GB
+# Code options 
+# https://quarto.org/docs/computations/execution-options.html
+execute:
+  # show code chunk output
+  include: true
+  # Show the code in the output
+  echo: false
+  # Show messages
+  message: false
+  # Show warnings
+  warning: false
+  # Cache code results
+  cache: true
+# Template specific
+journalinfo: "Publication reference"
+archive: "DOI: xxx/xx"
+keywordlabel: Keywords
+corrauthorlabel: Corresponding Author
+---
+
+# Introduction
+
+*Oceanic island urbanisation and non -native species invasion*
+
+Oceanic island are small sized with unique biodiversity and simplified communities shaped by human influence.
+They so stands out as unique ecosystems useful to study the impacts of human activities [@whittaker2017; @russell2019].
+Oceanic island tends to be more sensitive to species introductions and extensive anthropogenic land-used modification [@whittaker2017; @spatz2017; @russell2019].
+For island in particular, avian species have been among the most concerned taxa, having their community assemblages shaped by both invasion and extensive urbanisation processes [@boyer2014; @spatz2017; @rogers2021].
+
+*Interspecific competition and homogenization in islands*
+
+Non-native birds are issued from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae ..) mainly introduced for hunting and aesthetic purposes [@blackburn2001; @dyer2017].
+These species show peculiar traits adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to mostly include species occuring in forests [@soares2021].
+Non-native species may outcompete native for essential ressources, and can affect population dynamic for native species [@davis2003].
+As shown with the introduction of the Japanese white eye in Hawai'i [@blackburn2009].
+Interspecific competition can stand as a strong driver for native non-native species assemblages [@mcgill2006].
+Combined effect of the growing loss of native ecosystems and continued introduction of birds species, especially of forest-dwelling birds, intensify non-native competition threats [@sax2007].
+Moreover, the introduction of functionnaly similar species, promotes negative impact through functionnal homogenisation of island bird assemblages [@sobral2016; @sayol2021; @soares2022].
+
+*General context of Soundscape and ecoacoustic, acoustic indices*
+
+Advance in soundscape ecology, enabled better understanding of structure and dynamic of the sonic environments [@pijanowski2011].
+The soundscape incorpore all components, classified according to the sound sources: geophony (climate and geography), biophony (all living organisms), and anthrophony (human activities) [@pijanowski2011].
+Complexity of these acoustic emissions can be characterise via acoustic indices that creates a numeric summary of the soundscape [@farina2012].
+Ecological meaning is inferred by relating acoustic indices to diversity metrics [@towsey2014; @eldridge2018; @dröge2021], habitat conditions [@fuller2015; @sánchez-giraldo2021; @rudge2026] or temporal dynamics [@gage2014].
+They can also provide indicators on soundscape disturbances [@villanueva-rivera2011].
+
+*Implication for oceanic islands*
+
+In oceanic islands, ecological complexity is threathened by human pressure (urbanisation, invasion).
+Soundscape studies offers a good tool to monitor invasions, extinction, and assemblage turnover [@farina2012; @ribeiro2022].
+Such example exist with the study of an invasive ant leading to impoverishment of the soundscape in New Caledonian forests [@gasc2018].
+Species assemblages interact acoustically and reflect a dynamic processes called an acoustic community [@lellouch2014; @farina2016].
+In oceanic islands, acoustic communities are modified by non-native species introduction, having strong implications for native species acoutic habitat and their soundtope quality modification [@farina2014; @merchant2015].
+The soundtope represent the acoustic pattern created by the distribution of biophonies [@farina2014].
+Whereas the acoustic habitat incorpore the soundtope and add the environmental acoustic conditions in which the species assemblage is leaving [@merchant2015; @farina2016].
+
+*Acoustic implication*
+
+  Recent studies have pointed out the potential importance of invasive species as underappreciated source of novel noise, that could alter acoustic communication among native species [@hopkins2022] [@hunt2024].
+In the context of oceanic island, diminished bird richness reflect fewer vocalizing species, resulting in less saturated soundscapes than mainland [@robert2019].
+So, acoustic interferences are anticipated to lessened on islands.
+Yet, introduction of non-native species are numerous and is expected to continue to increase in islands [@seebens2017].
+Compared to native species, loudness and high occurrence rate of vocalization can be characteristic for invasive species [@hopkins2022].
+For example, over the course of one year, invasive Pekin Robins’ (*Leiothrix lutea*) calls made up 37% of all bird songs in a shrubland in their invaded range in Europe [@farina2013].
+Likewise, calls of invasive birds such as Common Mynas (*Acridotheres tristis*) seem to dominate the urban environments they have invaded (personal information from [@hopkins2022]).
+Plus, timing of calls between native and invasive are very similar, and may creates overlap, important for acoustic competition [@farina2013; @bleach2015a]
+
+  This novel biotic noises are quite attuned to mask vital information encoded in acoustic signals, and may impact frequencies, reduce perception and discrimination of the latter [@lohr2003].
+This masking effect can negatively affect communication, movement, vigilance, mating and foraging [@shannon2016].
+Affecting individual survival and reproductive success [@halfwerk2011; @medeiros2017].
+Therefore, the calls of non-native species, can bring a significant avenue for acoustic competition with native species and may dominates insular soundscape which favored it's homogenization [@farina2013].
+Still, evidence in oceanic island are scarce and need further investigation [@hopkins2022; @hunt2024].
+
+*Problematisation*
+
+  Here, we investigate the variation in saturation, intensity, complexity of signal emissions for the acoustic habitat and soundtope level of the soundscape, in relation to native/non-native bird assemblage and habitat factors, across the habitat gradients of an oceanic island.
+We predicted that urbanisation gradients drives relevant acoustic indices results for the acoustic habitat level [@fairbrass2017].
+We also predicted that differences in bird assemblage would drive the variation at the soundtope level, and that non-native species in these assemblages have higher implication in acoustic indices computation compared to native species.
+Given that urbanisation gradient and non-native dominated assemblage represents a combined effect.
+We expect that urban sites have more saturated and complex soundscape patterns due to both factors compared to deep forested sites.
+
+# Methods
+
