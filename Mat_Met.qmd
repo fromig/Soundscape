@@ -23,60 +23,73 @@ execute:
 *Study area*
 
 - The study was conducted in Tahiti, French Polynesia.
-  An island of the Pacific ocean, that undergoed as many other, strong impoverishment with numerous bird extinctions [@steadman1995], due to 1st Polynesian arrival (13th) (Belwood 1978) and Europeans in the 18th century (Thibault 1988).[@monnet1993]
-
--  Tahiti is tropical volcanic island of 1,042 km² and 2,241 m in altitude [@monnet1993].
-
-- Temperature variation ranges from ..
-  °C to °C and rainfall precipitation varies from ..
-  to ..
-  mm
+  An island of the Pacific ocean, that undergoed strong impoverishment with numerous bird extinctions due to 1st Polynesian arrival (13th) and Europeans in the 18th century (Thibault 1988).[@bellwood1978; \@monnet1993; @steadman1995]
 
 - From 1960 to 1990, strong habitat modification took places due to development, costal urbanisation and forest clearance (Blanchet 1986).
   [@monnet1993]
 
-- Introduced number of species exceed native species left in Tahiti, out of the total ..
-  terrestrials bird species, ..
-  of them are non-native.
+-  Tahiti is the largest (1,042 km²) island of French Polynesia [@monnet1993].
+  The climate is tropical with an average annual temperature of 26,5 °C and annual rainfall of 1700 mm in the coastal plain of the leeward coast of Tahiti Nui, reaching 4000 mm on the windward coast and Tahiti Iti, and up to 8000 mm in the center of Tahiti Nui (Laurent source quoin atlas meteorologique accès?)
+
+- Introduced number of bird species exceed native species left in Tahiti, out of the total .....
+  terrestrials bird species, 12 of them are non-native [@thibault2017].
+  Introduced birds have generally the highest densities in lowland, non-forested habitats such as urban areas or agricultural fields, and lower densities in high-elevation, contiguous forest, where native birds resides [@monnet1993].
 
 *Acoustic data collection*
 
-- From 2024 to 2026, passive acoustic data was collected using SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA).
-  In total 69 sites, from different habitat types ( Forest = , ... rural subrubani = , .. Urban = ) were surveyed along an altitudinal gradients.
+- Passive acoustic data was collected using SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA) from 2024 to 2026.
+  In total 69 sites from different habitat types ( Forest = , ... rural subrubani = , .. Urban = ) were surveyed along valleys altitudinal gradients.
 
-- Acoustic recording units (ARUs) were programmed to record continuously, at a sampling rate of ...
-  Hz (format, monophonic, 16 Bits).
-  We collected for a unique period in each site, ranging from ..
-  to ..
-  total hours per site, for a total effort of ....
-  h of continuous recording.
-  ARUs were placed at 1,5 m height in trees
+- Due to the limited number of ARUs, stations recorded for a week for a same valley, then changes at another attitudinal gradient, thus each gradient as staggering dates.
+
+- Acoustic recording units (ARUs) were programmed to record continuously and placed at 1,5 meters above the ground.
+  All devices recorded for ...
+  per station, with a total of ...
+  hours
+
+- Recordings were made as .WAV files with a ....
+  Hz sampling rate and gain of ...
+  dB, with monophonic and16 Bits.
 
 Besoin d'un figure carte avec nos sites et le rayon quon considère autour de nos sites...
 avces au moins la composition urbaine, forestière et suburbain en schéma grotesque.
 
 *Soundscape index metrics*
 
-- Using not cleaned files of wind, rain, and device glitches; nine relevant acoustic indices were computed (......).
-  We used the packaged ‘soundecology’ (...) and seewave (...) packages in R (..).
+- We selected nine relevant acoustic indices to englobe the acoustic heterogeneity of the acoustic habitat and the soundtope in each sampling site.
+  (figg)
 
-- We calculated nine relevant indices...
+- Acomplexity indices...?
 
-- Considering several relevant index was chosen, as multi index analysis have been shown to be more effective than single index investigations [@bradfer-lawrence2019]
+- The use of several acoustic indices was prioritize as multi index analysis have been shown to be more effective than single index investigations [@bradfer-lawrence2020]
 
-- Two frequency scale, representing the soundtope (... - ... Hz) and bird acoustic community (... - ... Hz) were respectivaly considered for each indices.
+- Acoustic indices were estimated for each 10-min recordings.
+  We used indices median output per hour for better control of index variability [@bradfer-lawrence2019].
+  Acoustic indices output were normalized to facilitate comparisons.
+
+- Two differents frequency limits were applied for the upper limit, while a law frequency threshold for devices glitches was considered.
+
+- For the soundtope the limit was (... Hz) to focus in biophonic component, as bird community in Tahiti is concentrated below this threshold.
+  Recordings containing rainfall sounds were excluded from the calculation at this soundscape level.
+
+- For the acoustic habitat, the limit was (... Hz) to englobe all sonic emissions that could affect the bird assemblages (... - ... Hz).
+  Recording containing rainfall sounds were included in the calculation at this soundscape level.
+
+- All indices were estimated using the default settings with the packages ‘soundecology’ (...) and seewave (...) packages in R (..).
 
 (Table used for soundscape and bird acoustic community monitoring, with hypothesis
 
 *Habitat metrics*
 
-- The Hard Surface area (HSA) and open herbaceous cover (HERB) was estimated from polygons inside a 100 meter radius circle for each ARUs positions using Google Earth (...)
+- Two different metrics, the Hard Surface Area (HSA) and the open herbaceous cover (HERB) were chosen to reflect habitat types and heterogeneity along the attitudinal gradients
+- HSA and HERB ranges between 0 to 100. Higher values indicates the important cover of hard surfaces and open herbaceous areas respectively. Habitat covers map was estimated using polygon surfaces in 100 meter radius circle around each ARUs positions in Google Earth (Google Earth Pro. 7.3.7.1327).
 
 *Avian caracterisation*
 
-- At each site, two acoustic bird survey were conducted from 06:00 am to 06:10 am for two sucessive days, without rainfall distrubance.
-  All bird species heard or spectrally seen were noted.
-  (find the ref that did the same argh...)
+- For each site, two ten minute aural and visual identification in acoustic recordings was conducted to obtain bird richness count.
+  Aural and visual acoustic identification were conducted from 06:00 am to 06:10 am for two successive days, without rainfall or strong acoustic disturbance.
+
+- From the aural identification dataset, several assemblage metrics were derived.
 
 - Non-native bird species encountered were...
 
@@ -87,27 +100,32 @@ avces au moins la composition urbaine, forestière et suburbain en schéma grote
 - All statistical analyses were performed in R v.().
   To investigate acoustic indices relationships with bird assemblage and habitat metrics, we used generalized linear mixed-effects models (GLMER).
 
-- Models uses a ...
-  distribution with a ...
-  function.
-
 - A correlation analysis was ran to evaluate associations between acoustic indices, possibly redundant indices were excluded.
 
 ?Nevertheless, the testSpatialAutocorrelation function in DHARMa was used to test model residuals for spatial autocorrelation
 
 *Bird assemblage metrics in response to habitat characteristic*
 
-Habitat as direct driver of bird assemblage was investigated as response variable and both habitat variable and altitude as independant fixed effect in GLMER.
-Each bird assemblage metric were modeled using ...
-distributions for binomial or ...
-distribution for.
-All GLMER were made using the "..."package (bib..).
+Habitat as direct driver of bird assemblage was investigated in GLMER ( ).
+The three bird assemblage metrics were modelled independently as responses variables using ...
+or ...
+distributions using the habitat metrics and altitudes as independent fixed variables.
+All GLMER were made using the "..."package ([@brooks2017]).
 
 *Acoustic indices in response to bird assemblage and habitat metrics*
 
-To investigate if acoustic indices relfect metrics of native/introduced bird assemblage, GLMER were used.
+Prior to modelisation, acoustic indices output were tested for correlations
 
-- Each acoustic index was modelled individually as response variable with one bird assemblage metric, the hard surface area and open herbaceaous cover as independant fixed effect. Site and commune considered as random effects. Models included the control fixed effect for the time (hour of the day to account for temporal autocorrelation.
+To investigate if acoustic indices reflect metrics of native/non native bird assemblage, GLMER were used to model each acoustic index ( ) individually, for both soundscape level.
+That in response to the following independent variables: one assemblage metric at a time and habitat metrics.
+
+All models included a control fixed effect for the time (hour of the day) to account for temporal autocorrelation and ranfom fixed effects for the site and commune.
+
+All models used a ...
+distribution with a ...
+function.
+
+- Each acoustic index was modelled individually as response variable with one bird assemblage metric, the hard surface area and open herbaceaous cover as independant fixed effect. Site and commune considered as random effects. Models included the control fixed effect for the time (hour of the day) to account for temporal autocorrelation.
 
 Ca serait cool de pouvoir tester à quel altitude on commence à avoir un switch dans les valeurs montrant qu'on passe a un autre soundtope?
 ou qu'on est donc sur un soundtone.
