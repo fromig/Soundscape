@@ -1,0 +1,11 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Soundscape"
+  navbar:
+    left:
+      - index.qmd
+      - Mat_Met.qmd
+      - Methode_GoogleEarth.qmd
