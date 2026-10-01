@@ -2,6 +2,9 @@
 title: "Demo Stylish Article"
 # Output formats
 format:
+  stylisharticle-html:
+    # Color example, see "Text color"
+    css: colors.css
   docx:
     toc: true
   stylisharticle-pdf:
@@ -9,9 +12,6 @@ format:
     # Color example, see "Text color"
     header-includes:
       \definecolor{grey}{RGB}{191, 191, 191}
-  stylisharticle-html:
-    # Color example, see "Text color"
-    css: colors.css
 # Authors (https://quarto.org/docs/journals/authors.html#author-schema)
 author:
   - name: Félix Romiguière
@@ -136,15 +136,12 @@ Stations recorded along the same valley's gradient, so each gradient as staggeri
 Acoustic recording units (ARUs) were programmed to record continuously and placed at 1,5 meters above the ground.Devices recorded for "..." per station, with a total of "..." hours recorded.
 Recordings were made as .WAV files with a "..." Hz sampling rate and gain of "..." dB, with monophonic and 16 Bits formats.
 
-:::
-
-:::
-
 *Soundscape index metrics*
 
 We selected nine relevant acoustic indices to encompass the sonic emissions heterogeneity for the acoustic habitat and the soundtope of each sampling site.
 Choice of indices were based on their relevance to reflect patterns of variability, heterogeneity, complexity of both soundscape level.
-The use of several acoustic indices was prioritize as multi index analysis have been shown to be more effective than single index investigations [@bradfer-lawrence2020]. Acoustic indices were estimated for each 10-min recordings.
+The use of several acoustic indices was prioritize as multi index analysis have been shown to be more effective than single index investigations [@bradfer-lawrence2020].
+Acoustic indices were estimated for each 10-min recordings.
 We used indices median output per hour for better control of index variation [@bradfer-lawrence2019].
 Acoustic indices output were normalized to facilitate comparisons.
 
@@ -155,25 +152,34 @@ For the acoustic habitat, the limit was (... Hz) to encompass all sonic emission
 Recording containing rainfall sounds were included in the calculation at this soundscape level.
 All indices were estimated using the default settings with the packages ‘soundecology’ (...) and seewave (...) packages in R (..).
 
-:::
-
 (Table used for soundscape and bird acoustic community monitoring, with hypothesis)
-:::
 
 *Habitat metrics*
 
-Two metrics, the Hard Surface Area (HSA) and the open herbaceous cover (HERB) were chosen to reflect habitat types and heterogeneity along the attitudinal gradients. HSA and HERB ranges between 0 and 100 %. Respectively, higher values indicates the important cover of human-modified surfaces and open herbaceous areas. Habitat covers map was estimated using polygon surfaces in 100 meter radius circle around each ARUs positions in Google Earth (Google Earth Pro.7.3.7.1327).
+Two metrics, the Hard Surface Area (HSA) and the open herbaceous cover (HERB) were chosen to reflect habitat types and heterogeneity along the attitudinal gradients.
+HSA and HERB ranges between 0 and 100 %.
+Respectively, higher values indicates the important cover of human-modified surfaces and open herbaceous areas.
+Habitat covers map was estimated using polygon surfaces in 100 meter radius circle around each ARUs positions in Google Earth (Google Earth Pro.7.3.7.1327).
 
 *Avian caracterisation*
 
-Two ten minute aural and visual identification in acoustic recordings was conducted for each site, to obtain bird richness count. Aural and visual acoustic identification were conducted from 06:00 am to 06:10 am in recordings free of rainfall or strong acoustic disturbance. From the aural identification database, several assemblage metrics were derived: total richness (count), non-native richness (count), presence of native bird (binomial), presence of Myna (binomial). Non-native bird species encountered were "..." Native bird species monitored were "...".
+Two ten minute aural and visual identification in acoustic recordings was conducted for each site, to obtain bird richness count.
+Aural and visual acoustic identification were conducted from 06:00 am to 06:10 am in recordings free of rainfall or strong acoustic disturbance.
+From the aural identification database, several assemblage metrics were derived: total richness (count), non-native richness (count), presence of native bird (binomial), presence of Myna (binomial).
+Non-native bird species encountered were "..." Native bird species monitored were "...".
 
 *Bird assemblage metrics in response to habitat characteristic analysis*
 
-Habitat as direct driver of bird assemblage was investigated. The three bird assemblage metrics were modeled independently as responses variables using "..." for or "..." for "..." distributions using the habitat metrics and altitude as independent fixed variables. All generalized linear mixed-effects models (GLMER) were made using the "GlmmTMB" package [@brooks2017].
+Habitat as direct driver of bird assemblage was investigated.
+The three bird assemblage metrics were modeled independently as responses variables using "..." for or "..." for "..." distributions using the habitat metrics and altitude as independent fixed variables.
+All generalized linear mixed-effects models (GLMER) were made using the "GlmmTMB" package [@brooks2017].
 
 *Acoustic indices in response to bird assemblage and habitat metrics analysis*
 
 Prior to analysis, acoustic indices output were tested for correlations.
 
-To investigate if acoustic indices reflect metrics of native/non native bird assemblage, GLMER were used to model each acoustic index (...) individually as response variable, for both acoustic habitat and soundtope level. In response to the following independent variables: one assemblage metric at a time and habitat metrics. All models included a control fixed effect for the time (hour of the day) to account for temporal autocorrelation and random fixed effects for the site and commune. Models used a "..." distribution with a "..." function. All statistical analyses were performed in R v.().
+To investigate if acoustic indices reflect metrics of native/non native bird assemblage, GLMER were used to model each acoustic index (...) individually as response variable, for both acoustic habitat and soundtope level.
+In response to the following independent variables: one assemblage metric at a time and habitat metrics.
+All models included a control fixed effect for the time (hour of the day) to account for temporal autocorrelation and random fixed effects for the site and commune.
+Models used a "..." distribution with a "..." function.
+All statistical analyses were performed in R v.().
