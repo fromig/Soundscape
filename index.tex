@@ -156,9 +156,6 @@
 \usepackage{orcidlink}  % Orcid logo and link to author page
 
 % -------------- Font size
-% R code: scriptsize
-\usepackage{fancyvrb}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\scriptsize}
 % R output: footnotesize
 \makeatletter
 \patchcmd{\@verbatim}
@@ -181,21 +178,18 @@
 \let\oldlt\longtable
 \let\endoldlt\endlongtable
 \def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
-\def\longtable@i[#1]{\begin{figure}[t]
+\def\longtable@i[#1]{
+\begin{figure}[t]
 \onecolumn
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.5\textwidth}\scriptsize
 \oldlt[#1]
 }
-\def\longtable@ii{\begin{figure}[t]
+\def\longtable@ii{
+\begin{figure}[t]
 \onecolumn
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.5\textwidth}\scriptsize
 \oldlt
 }
-\def\endlongtable{\endoldlt
-\end{minipage}
-\twocolumn
-\end{figure}}
-\makeatother
 \definecolor{red}{RGB}{255, 0, 0}
 \definecolor{green}{RGB}{0, 255, 0}
 \definecolor{blue}{RGB}{0, 0, 255}
@@ -481,10 +475,6 @@ Recordings were made as .WAV files with a \enquote{\ldots{}} Hz sampling
 rate and gain of \enquote{\ldots{}} dB, with monophonic and 16 Bits
 formats.
 
-:::
-
-:::
-
 \emph{Soundscape index metrics}
 
 We selected nine relevant acoustic indices to encompass the sonic
@@ -493,7 +483,7 @@ each sampling site. Choice of indices were based on their relevance to
 reflect patterns of variability, heterogeneity, complexity of both
 soundscape level. The use of several acoustic indices was prioritize as
 multi index analysis have been shown to be more effective than single
-index investigations (\textbf{bradfer-lawrence2020?}). Acoustic indices
+index investigations (Bradfer-Lawrence et al. 2020). Acoustic indices
 were estimated for each 10-min recordings. We used indices median output
 per hour for better control of index variation (Bradfer-Lawrence et al.
 2019). Acoustic indices output were normalized to facilitate
@@ -510,10 +500,8 @@ the calculation at this soundscape level. All indices were estimated
 using the default settings with the packages `soundecology' (\ldots) and
 seewave (\ldots) packages in R (..).
 
-:::
-
 (Table used for soundscape and bird acoustic community monitoring, with
-hypothesis) :::
+hypothesis)
 
 \emph{Habitat metrics}
 
@@ -597,6 +585,12 @@ Boyer, Alison G., et Walter Jetz. 2014. {«~Extinctions and the Loss of
 Ecological Function in Island Bird Communities~»}. \emph{Global Ecology
 and Biogeography} 23 (6): 679‑88.
 \url{https://doi.org/10.1111/geb.12147}.
+
+\bibitem[\citeproctext]{ref-bradfer-lawrence2020}
+Bradfer-Lawrence, Tom, Nils Bunnefeld, Nick Gardner, Stephen G. Willis,
+et Daisy H. Dent. 2020. {«~Rapid assessment of avian species richness
+and abundance using acoustic indices~»}. \emph{Ecological Indicators}
+115 (août): 106400. \url{https://doi.org/10.1016/j.ecolind.2020.106400}.
 
 \bibitem[\citeproctext]{ref-bradfer-lawrence2019}
 Bradfer-Lawrence, Tom, Nick Gardner, Lynsey Bunnefeld, Nils Bunnefeld,
