@@ -2,9 +2,6 @@
 title: "Demo Stylish Article"
 # Output formats
 format:
-  stylisharticle-html:
-    # Color example, see "Text color"
-    css: colors.css
   docx:
     toc: true
   stylisharticle-pdf:
@@ -12,6 +9,9 @@ format:
     # Color example, see "Text color"
     header-includes:
       \definecolor{grey}{RGB}{191, 191, 191}
+  stylisharticle-html:
+    # Color example, see "Text color"
+    css: colors.css
 # Authors (https://quarto.org/docs/journals/authors.html#author-schema)
 author:
   - name: Félix Romiguière
