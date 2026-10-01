@@ -125,7 +125,7 @@ All models used a ...
 distribution with a ...
 function.
 
-- Each acoustic index was modelled individually as response variable with one bird assemblage metric, the hard surface area and open herbaceaous cover as independant fixed effect. Site and commune considered as random effects. Models included the control fixed effect for the time (hour of the day) to account for temporal autocorrelation.
+- Each acoustic index was modelled individually as response variable with one bird assemblage metric, the hard surface area and open herbaceaous cover as independant fixed effect. Site and commune considered as random effects. Models included the control fixed effect for the time (hour of the day) to account for temporal autocorrelation. All statistical analyses were performed in R v.().
 
 Ca serait cool de pouvoir tester à quel altitude on commence à avoir un switch dans les valeurs montrant qu'on passe a un autre soundtope?
 ou qu'on est donc sur un soundtone.
