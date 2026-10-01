@@ -1,0 +1,875 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+% Code above from https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/pdf/pandoc/passoptions.latex
+% Customization below
+\PassOptionsToPackage{babel}{csquotes}
+%
+\documentclass[
+  french,
+  11pt,
+]{stylisharticle}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{2}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+\usepackage[]{csquotes}
+
+% -------------- Additional packages
+\usepackage{orcidlink}  % Orcid logo and link to author page
+
+% -------------- Font size
+% R code: scriptsize
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\scriptsize}
+% R output: footnotesize
+\makeatletter
+\patchcmd{\@verbatim}
+  {\verbatim@font}
+  {\verbatim@font\footnotesize}
+  {}{}
+% References font size whether bibtex is used or not
+\@ifundefined{bibfont}
+  {%
+    \AtBeginEnvironment{CSLReferences}{\footnotesize}
+  }
+  {%
+    \renewcommand*{\bibfont}{\footnotesize}
+  }%
+\makeatother
+
+% -------------- longtable 2 columns
+% https://tex.stackexchange.com/questions/161431/how-to-solve-longtable-is-not-in-1-column-mode-error
+\makeatletter
+\let\oldlt\longtable
+\let\endoldlt\endlongtable
+\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
+\def\longtable@i[#1]{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt[#1]
+}
+\def\longtable@ii{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt
+}
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
+\definecolor{red}{RGB}{255, 0, 0}
+\definecolor{green}{RGB}{0, 255, 0}
+\definecolor{blue}{RGB}{0, 0, 255}
+\definecolor{grey}{RGB}{191, 191, 191}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table des matières}
+\else
+  \newcommand\contentsname{Table des matières}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Liste des Figures}
+\else
+  \newcommand\listfigurename{Liste des Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Liste des Tables}
+\else
+  \newcommand\listtablename{Liste des Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Liste des Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Demo Stylish Article},
+  pdfauthor={Félix Romiguière},
+  pdflang={fr-FR},
+  pdfkeywords={template, demo},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+% Set up hyperref, after loading it
+\hypersetup{
+  linkcolor=black,
+  citecolor=black,
+  colorlinks=true
+}
+
+% Journal information
+  \JournalInfo{Publication reference}
+
+% Additional notes (e.g. copyright, DOI, review/research article)
+  \Archive{DOI: xxx/xx}
+
+% Article title
+\PaperTitle{Demo Stylish Article}
+
+% Authors
+\Authors{
+      {Félix Romiguière}%
+    \textsuperscript{%
+      ~\orcidlink{0000-0000-0000-0000}%
+      1%
+      %
+    }%
+    }
+
+% Affiliations
+    \affiliation{%
+      \textsuperscript{1}%
+      Université de Montpellier%
+      , Scientific Department%
+      %
+      , Somewhere%
+      , Montpellier%
+      %
+      , France%
+      , 9999%
+      %
+    }
+
+% Corresponding author
+  %
+
+% Keywords
+\Keywords{template, demo}
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+
+%	Abstract
+\Abstract{
+  Document pour le début de rédaction de l'article sur Tahiti Soundscape
+}
+\begin{document}
+% Makes all text pages the same height
+\flushbottom
+
+% Print the title and abstract box
+\maketitle
+
+% Print the contents section
+\tableofcontents
+
+% Remove page numbering from the first page
+\thispagestyle{empty}
+
+\section{Introduction}\label{introduction}
+
+\emph{Oceanic island urbanisation and non -native species invasion}
+
+Oceanic island are small sized with unique biodiversity and simplified
+communities shaped by human influence. They so stands out as unique
+ecosystems useful to study the impacts of human activities (Whittaker et
+al. 2017; Russell et Kueffer 2019). Oceanic island tends to be more
+sensitive to species introductions and extensive anthropogenic land-used
+modification (Whittaker et al. 2017; Spatz et al. 2017; Russell et
+Kueffer 2019). For island in particular, avian species have been among
+the most concerned taxa, having their community assemblages shaped by
+both invasion and extensive urbanisation processes (Boyer et Jetz 2014;
+Spatz et al. 2017; Rogers et al. 2021).
+
+\emph{Interspecific competition and homogenization in islands}
+
+Non-native birds are issued from specific families (e.g.,
+Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and
+Sturnidae ..) mainly introduced for hunting and aesthetic purposes
+(Blackburn et Duncan 2001; Dyer et al. 2017). These species show
+peculiar traits adapted to urban and agricultural landscapes, whereas
+native birds from oceanic island tends to mostly include species
+occuring in forests (Soares et al. 2021). Non-native species may
+outcompete native for essential ressources, and can affect population
+dynamic for native species (Davis 2003). As shown with the introduction
+of the Japanese white eye in Hawai'i (Blackburn et al. 2009).
+Interspecific competition can stand as a strong driver for native
+non-native species assemblages (McGill et al. 2006). Combined effect of
+the growing loss of native ecosystems and continued introduction of
+birds species, especially of forest-dwelling birds, intensify non-native
+competition threats (Sax et al. 2007). Moreover, the introduction of
+functionnaly similar species, promotes negative impact through
+functionnal homogenisation of island bird assemblages (Sobral et al.
+2016; Sayol et al. 2021; Soares et al. 2022).
+
+\emph{General context of Soundscape and ecoacoustic, acoustic indices}
+
+Advance in soundscape ecology, enabled better understanding of structure
+and dynamic of the sonic environments (Pijanowski et al. 2011). The
+soundscape incorpore all components, classified according to the sound
+sources: geophony (climate and geography), biophony (all living
+organisms), and anthrophony (human activities) (Pijanowski et al. 2011).
+Complexity of these acoustic emissions can be characterise via acoustic
+indices that creates a numeric summary of the soundscape (Farina et
+Pieretti 2012). Ecological meaning is inferred by relating acoustic
+indices to diversity metrics (Towsey et al. 2014; Eldridge et al. 2018;
+Dröge et al. 2021), habitat conditions (Fuller et al. 2015;
+Sánchez-Giraldo et al. 2021; Rudge et al. 2026) or temporal dynamics
+(Gage et Axel 2014). They can also provide indicators on soundscape
+disturbances (Villanueva-Rivera et al. 2011).
+
+\emph{Implication for oceanic islands}
+
+In oceanic islands, ecological complexity is threathened by human
+pressure (urbanisation, invasion). Soundscape studies offers a good tool
+to monitor invasions, extinction, and assemblage turnover (Farina et
+Pieretti 2012; Ribeiro et al. 2022). Such example exist with the study
+of an invasive ant leading to impoverishment of the soundscape in New
+Caledonian forests (Gasc et al. 2018). Species assemblages interact
+acoustically and reflect a dynamic processes called an acoustic
+community (Lellouch et al. 2014; Farina et James 2016). In oceanic
+islands, acoustic communities are modified by non-native species
+introduction, having strong implications for native species acoutic
+habitat and their soundtope quality modification (Farina 2014; Merchant
+et al. 2015). The soundtope represent the acoustic pattern created by
+the distribution of biophonies (Farina 2014). Whereas the acoustic
+habitat incorpore the soundtope and add the environmental acoustic
+conditions in which the species assemblage is leaving (Merchant et al.
+2015; Farina et James 2016).
+
+\emph{Acoustic implication}
+
+Recent studies have pointed out the potential importance of invasive
+species as underappreciated source of novel noise, that could alter
+acoustic communication among native species (Hopkins et al. 2022) (Hunt
+et al. 2024). In the context of oceanic island, diminished bird richness
+reflect fewer vocalizing species, resulting in less saturated
+soundscapes than mainland (Robert et al. 2019). So, acoustic
+interferences are anticipated to lessened on islands. Yet, introduction
+of non-native species are numerous and is expected to continue to
+increase in islands (Seebens et al. 2017). Compared to native species,
+loudness and high occurrence rate of vocalization can be characteristic
+for invasive species (Hopkins et al. 2022). For example, over the course
+of one year, invasive Pekin Robins' (\emph{Leiothrix lutea}) calls made
+up 37\% of all bird songs in a shrubland in their invaded range in
+Europe (Farina et al. 2013). Likewise, calls of invasive birds such as
+Common Mynas (\emph{Acridotheres tristis}) seem to dominate the urban
+environments they have invaded (personal information from (Hopkins et
+al. 2022)). Plus, timing of calls between native and invasive are very
+similar, and may creates overlap, important for acoustic competition
+(Farina et al. 2013; Bleach et al. 2015)
+
+This novel biotic noises are quite attuned to mask vital information
+encoded in acoustic signals, and may impact frequencies, reduce
+perception and discrimination of the latter (Lohr et al. 2003). This
+masking effect can negatively affect communication, movement, vigilance,
+mating and foraging (Shannon et al. 2016). Affecting individual survival
+and reproductive success (Halfwerk et al. 2011; Medeiros et al. 2017).
+Therefore, the calls of non-native species, can bring a significant
+avenue for acoustic competition with native species and may dominates
+insular soundscape which favored it's homogenization (Farina et al.
+2013). Still, evidence in oceanic island are scarce and need further
+investigation (Hopkins et al. 2022; Hunt et al. 2024).
+
+\emph{Problematisation}
+
+Here, we sought to investigate the variation in saturation, intensity,
+complexity of signal emissions at the acoustic habitat and soundtope
+level of the soundscape, in relation to native/non-native bird
+assemblage and habitat factors, across the habitat gradients Tahiti. We
+predicted that urbanisation gradients drives relevant acoustic indices
+results for the acoustic habitat level (Fairbrass et al. 2017). We also
+predicted that differences in bird assemblage would drive the variation
+at the soundtope level, and that non-native species in these assemblages
+have higher implication in acoustic indices computation compared to
+native species. Given that urbanisation gradient and non-native
+dominated assemblage represents a combined effect. We expect that urban
+sites have more saturated and complex soundscape patterns due to both
+factors compared to deep forested sites.
+
+\section{Methods}\label{methods}
+
+\emph{Study area}
+
+The study was conducted in Tahiti, French Polynesia. Tahiti is the
+largest (1,042 km²) island of French Polynesia (Monnet et al. 1993). The
+climate is tropical with an average annual temperature of 26,5 °C and
+annual rainfall of 1700 mm in the coastal plain of the leeward coast of
+Tahiti Nui, reaching 4000 mm on the windward coast and Tahiti Iti, and
+up to 8000 mm in the center of Tahiti Nui (Laurent source quoin atlas
+meteorologique accès?). Islands of the Pacific ocean undergoes strong
+impoverishment with numerous bird extinctions due to first Polynesian
+arrival in the 13th century and Europeans in the 18th century (Thibault
+1988).(Bellwood 1978; Monnet et al. 1993; Steadman 1995) From 1960 to
+1990, strong habitat modification took places due to development, costal
+urbanisation and forest clearance (Blanchet 1986)(Monnet et al. 1993).
+In Tahiti \enquote{\ldots{}} terrestrials bird species occurs, 12 of
+them are non-native (Thibault et Cibois 2017). Introduced birds have
+generally the highest densities in lowland, non-forested habitats such
+as urban areas or agricultural fields, and lower densities in
+high-elevation, contiguous forest, where native birds resides (Monnet et
+al. 1993) (besoin source moins loin pour Tahiti or personal
+observation).
+
+\emph{Acoustic data collection}
+
+Passive acoustic data was collected using SongMeter SM2 and SM4 digital
+recording devices (Wildlife Acoustics, Maynard, MA, USA) from 2024 to
+2026. In total 69 sites from different habitat types ( Forest = ,
+\ldots{} rural or suburban = , .. Urban = ) were surveyed in valleys
+along an attitudinal gradients. Stations recorded along the same
+valley's gradient, so each gradient as staggering dates. Acoustic
+recording units (ARUs) were programmed to record continuously and placed
+at 1,5 meters above the ground.Devices recorded for \enquote{\ldots{}}
+per station, with a total of \enquote{\ldots{}} hours recorded.
+Recordings were made as .WAV files with a \enquote{\ldots{}} Hz sampling
+rate and gain of \enquote{\ldots{}} dB, with monophonic and 16 Bits
+formats.
+
+:::
+
+:::
+
+\emph{Soundscape index metrics}
+
+We selected nine relevant acoustic indices to encompass the sonic
+emissions heterogeneity for the acoustic habitat and the soundtope of
+each sampling site. Choice of indices were based on their relevance to
+reflect patterns of variability, heterogeneity, complexity of both
+soundscape level. The use of several acoustic indices was prioritize as
+multi index analysis have been shown to be more effective than single
+index investigations (\textbf{bradfer-lawrence2020?}). Acoustic indices
+were estimated for each 10-min recordings. We used indices median output
+per hour for better control of index variation (Bradfer-Lawrence et al.
+2019). Acoustic indices output were normalized to facilitate
+comparisons.
+
+Two different frequency limits were applied for the upper limit and a
+low frequency threshold for devices glitches. For the soundtope the
+limit was (\ldots{} Hz) to reflect Tahiti bird community emissions.
+Recordings containing rainfall sounds were excluded from the calculation
+at this soundscape level. For the acoustic habitat, the limit was
+(\ldots{} Hz) to encompass all sonic emissions that could affect the
+bird assemblages. Recording containing rainfall sounds were included in
+the calculation at this soundscape level. All indices were estimated
+using the default settings with the packages `soundecology' (\ldots) and
+seewave (\ldots) packages in R (..).
+
+:::
+
+(Table used for soundscape and bird acoustic community monitoring, with
+hypothesis) :::
+
+\emph{Habitat metrics}
+
+Two metrics, the Hard Surface Area (HSA) and the open herbaceous cover
+(HERB) were chosen to reflect habitat types and heterogeneity along the
+attitudinal gradients. HSA and HERB ranges between 0 and 100 \%.
+Respectively, higher values indicates the important cover of
+human-modified surfaces and open herbaceous areas. Habitat covers map
+was estimated using polygon surfaces in 100 meter radius circle around
+each ARUs positions in Google Earth (Google Earth Pro.7.3.7.1327).
+
+\emph{Avian caracterisation}
+
+Two ten minute aural and visual identification in acoustic recordings
+was conducted for each site, to obtain bird richness count. Aural and
+visual acoustic identification were conducted from 06:00 am to 06:10 am
+in recordings free of rainfall or strong acoustic disturbance. From the
+aural identification database, several assemblage metrics were derived:
+total richness (count), non-native richness (count), presence of native
+bird (binomial), presence of Myna (binomial). Non-native bird species
+encountered were \enquote{\ldots{}} Native bird species monitored were
+\enquote{\ldots{}}.
+
+\emph{Bird assemblage metrics in response to habitat characteristic
+analysis}
+
+Habitat as direct driver of bird assemblage was investigated. The three
+bird assemblage metrics were modeled independently as responses
+variables using \enquote{\ldots{}} for or \enquote{\ldots{}} for
+\enquote{\ldots{}} distributions using the habitat metrics and altitude
+as independent fixed variables. All generalized linear mixed-effects
+models (GLMER) were made using the \enquote{GlmmTMB} package (Brooks et
+al. 2017).
+
+\emph{Acoustic indices in response to bird assemblage and habitat
+metrics analysis}
+
+Prior to analysis, acoustic indices output were tested for correlations.
+
+To investigate if acoustic indices reflect metrics of native/non native
+bird assemblage, GLMER were used to model each acoustic index (\ldots)
+individually as response variable, for both acoustic habitat and
+soundtope level. In response to the following independent variables: one
+assemblage metric at a time and habitat metrics. All models included a
+control fixed effect for the time (hour of the day) to account for
+temporal autocorrelation and random fixed effects for the site and
+commune. Models used a \enquote{\ldots{}} distribution with a
+\enquote{\ldots{}} function. All statistical analyses were performed in
+R v.().
+
+\section*{References}\label{bibliography}
+\addcontentsline{toc}{section}{References}
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-bellwood1978}
+Bellwood, Peter. 1978. \emph{The Polynesians: Prehistory of an Island
+People}. Ancient Peoples et Places. Thames; Hudson.
+\url{https://catalogue.nla.gov.au/catalog/2544013}.
+
+\bibitem[\citeproctext]{ref-blackburn2001}
+Blackburn, Tim M., et Richard P. Duncan. 2001. {«~Determinants of
+Establishment Success in Introduced Birds~»}. \emph{Nature} 414 (6860):
+195‑97. \url{https://doi.org/10.1038/35102557}.
+
+\bibitem[\citeproctext]{ref-blackburn2009}
+Blackburn, Tim M., Julie L. Lockwood, et Phillip Cassey. 2009.
+\emph{Avian Invasions: The Ecology and Evolution of Exotic Birds}.
+Oxford University Press.
+\url{https://doi.org/10.1093/acprof:oso/9780199232543.001.0001}.
+
+\bibitem[\citeproctext]{ref-bleach2015a}
+Bleach, Iris, Christa Beckmann, Camila Both, Gregory Brown, et Richard
+Shine. 2015. {«~Noisy neighbours at the frog pond: effects of invasive
+cane toads on the calling behaviour of native Australian frogs~»}.
+\emph{Behavioral Ecology and Sociobiology} 69 (février).
+\url{https://doi.org/10.1007/s00265-015-1879-z}.
+
+\bibitem[\citeproctext]{ref-boyer2014}
+Boyer, Alison G., et Walter Jetz. 2014. {«~Extinctions and the Loss of
+Ecological Function in Island Bird Communities~»}. \emph{Global Ecology
+and Biogeography} 23 (6): 679‑88.
+\url{https://doi.org/10.1111/geb.12147}.
+
+\bibitem[\citeproctext]{ref-bradfer-lawrence2019}
+Bradfer-Lawrence, Tom, Nick Gardner, Lynsey Bunnefeld, Nils Bunnefeld,
+Stephen G. Willis, et Daisy H. Dent. 2019. {«~Guidelines for the Use of
+Acoustic Indices in Environmental Research~»}. \emph{Methods in Ecology
+and Evolution} 10 (10): 1796‑807.
+\url{https://doi.org/10.1111/2041-210X.13254}.
+
+\bibitem[\citeproctext]{ref-brooks2017}
+Brooks, Mollie E., Kasper Kristensen, Koen J. van Benthem, et al. 2017.
+{«~The R Journal: glmmTMB Balances Speed and Flexibility Among Packages
+for Zero-inflated Generalized Linear Mixed Modeling~»}. \emph{The R
+Journal} 9 (2): 378‑400. \url{https://doi.org/10.32614/RJ-2017-066}.
+
+\bibitem[\citeproctext]{ref-davis2003}
+Davis, Mark A. 2003. {«~Biotic Globalization: Does Competition from
+Introduced Species Threaten Biodiversity?~»} \emph{BioScience} 53 (5):
+481‑89.
+\url{https://doi.org/10.1641/0006-3568(2003)053\%5B0481:BGDCFI\%5D2.0.CO;2}.
+
+\bibitem[\citeproctext]{ref-druxf6ge2021}
+Dröge, Saskia, Dominic Andreas Martin, Rouvah Andriafanomezantsoa, et
+al. 2021. {«~Listening to a changing landscape: Acoustic indices reflect
+bird species richness and plot-scale vegetation structure across
+different land-use types in north-eastern Madagascar~»}.
+\emph{Ecological Indicators} 120 (janvier): 106929.
+\url{https://doi.org/10.1016/j.ecolind.2020.106929}.
+
+\bibitem[\citeproctext]{ref-dyer2017}
+Dyer, Ellie E., Phillip Cassey, David W. Redding, et al. 2017. {«~The
+Global Distribution and Drivers of Alien Bird Species Richness~»}.
+\emph{PLOS Biology} 15 (1): e2000942.
+\url{https://doi.org/10.1371/journal.pbio.2000942}.
+
+\bibitem[\citeproctext]{ref-eldridge2018}
+Eldridge, Alice, Patrice Guyot, Paola Moscoso, Alison Johnston, Ying
+Eyre-Walker, et Mika Peck. 2018. {«~Sounding out ecoacoustic metrics:
+Avian species richness is predicted by acoustic indices in temperate but
+not tropical habitats~»}. \emph{Ecological Indicators} 95 (décembre):
+939‑52. \url{https://doi.org/10.1016/j.ecolind.2018.06.012}.
+
+\bibitem[\citeproctext]{ref-fairbrass2017}
+Fairbrass, Alison J., Peter Rennert, Carol Williams, Helena Titheridge,
+et Kate E. Jones. 2017. {«~Biases of acoustic indices measuring
+biodiversity in urban areas~»}. \emph{Ecological Indicators} 83
+(décembre): 169‑77. \url{https://doi.org/10.1016/j.ecolind.2017.07.064}.
+
+\bibitem[\citeproctext]{ref-farina2014}
+Farina, Almo. 2014. \emph{Soundscape Ecology: Principles, Patterns,
+Methods and Applications}. Springer Netherlands.
+\url{https://doi.org/10.1007/978-94-007-7374-5}.
+
+\bibitem[\citeproctext]{ref-farina2016}
+Farina, Almo, et Philip James. 2016. {«~The acoustic communities:
+Definition, description and ecological role~»}. \emph{Bio Systems} 147
+(septembre): 11‑20.
+\url{https://doi.org/10.1016/j.biosystems.2016.05.011}.
+
+\bibitem[\citeproctext]{ref-farina2012}
+Farina, Almo, et Nadia Pieretti. 2012. {«~The soundscape ecology: A new
+frontier of landscape research and its application to islands and
+coastal systems~»}. \emph{Journal of Marine and Island Cultures} 1
+(juin): 21‑26. \url{https://doi.org/10.1016/j.imic.2012.04.002}.
+
+\bibitem[\citeproctext]{ref-farina2013}
+Farina, Almo, Nadia Pieretti, et Niki Morganti. 2013. {«~Acoustic
+Patterns of an Invasive Species: The Red-Billed Leiothrix (
+{\emph{Leiothrix Lutea}} Scopoli 1786) in a Mediterranean Shrubland~»}.
+\emph{Bioacoustics} 22 (3): 175‑94.
+\url{https://doi.org/10.1080/09524622.2012.761571}.
+
+\bibitem[\citeproctext]{ref-fuller2015}
+Fuller, Susan, Anne C. Axel, David Tucker, et Stuart H. Gage. 2015.
+{«~Connecting soundscape to landscape: Which acoustic index best
+describes landscape configuration?~»} \emph{Ecological Indicators} 58
+(novembre): 207‑15. \url{https://doi.org/10.1016/j.ecolind.2015.05.057}.
+
+\bibitem[\citeproctext]{ref-gage2014}
+Gage, Stuart H., et Anne C. Axel. 2014. {«~Visualization of temporal
+change in soundscape power of a Michigan lake habitat over a 4-year
+period~»}. \emph{Ecological Informatics}, Ecological Acoustics, vol. 21
+(mai): 100‑109. \url{https://doi.org/10.1016/j.ecoinf.2013.11.004}.
+
+\bibitem[\citeproctext]{ref-gasc2018}
+Gasc, A., J. Anso, J. Sueur, H. Jourdan, et L. Desutter-Grandcolas.
+2018. {«~Cricket Calling Communities as an Indicator of the Invasive Ant
+Wasmannia Auropunctata in an Insular Biodiversity Hotspot~»}.
+\emph{Biological Invasions} 20 (5): 1099‑111.
+\url{https://doi.org/10.1007/s10530-017-1612-0}.
+
+\bibitem[\citeproctext]{ref-halfwerk2011}
+Halfwerk, Wouter, Leonard J. M. Holleman, C(Kate). M. Lessells, et Hans
+Slabbekoorn. 2011. {«~Negative Impact of Traffic Noise on Avian
+Reproductive Success~»}. \emph{Journal of Applied Ecology} 48 (1):
+210‑19. \url{https://doi.org/10.1111/j.1365-2664.2010.01914.x}.
+
+\bibitem[\citeproctext]{ref-hopkins2022}
+Hopkins, Jaimie M., Will Edwards, et Lin Schwarzkopf. 2022. {«~Invading
+the Soundscape: Exploring the Effects of Invasive Species{'} Calls on
+Acoustic Signals of Native Wildlife~»}. \emph{Biological Invasions} 24
+(11): 3381‑93. \url{https://doi.org/10.1007/s10530-022-02856-w}.
+
+\bibitem[\citeproctext]{ref-hunt2024}
+Hunt, Noah J., Thomas Ibanez, Adam A. Pack, et Patrick J. Hart. 2024.
+{«~Signal Partitioning Between Native and Introduced Forest Birds of
+Hawai{`}i Island~»}. \emph{Frontiers in Ecology and Evolution} 12
+(août). \url{https://doi.org/10.3389/fevo.2024.1399455}.
+
+\bibitem[\citeproctext]{ref-lellouch2014}
+Lellouch, Laurent, Sandrine Pavoine, Frédéric Jiguet, Hervé Glotin, et
+Jérôme Sueur. 2014. {«~Monitoring Temporal Change of Bird Communities
+with Dissimilarity Acoustic Indices~»}. \emph{Methods in Ecology and
+Evolution} 5 (6): 495‑505.
+\url{https://doi.org/10.1111/2041-210X.12178}.
+
+\bibitem[\citeproctext]{ref-lohr2003}
+Lohr, Bernard, Timothy F. Wright, et Robert J. Dooling. 2003.
+{«~Detection and discrimination of natural calls in masking noise by
+birds: estimating the active space of a signal~»}. \emph{Animal
+Behaviour} 65 (4): 763‑77. \url{https://doi.org/10.1006/anbe.2003.2093}.
+
+\bibitem[\citeproctext]{ref-mcgill2006}
+McGill, Brian J., Brian J. Enquist, Evan Weiher, et Mark Westoby. 2006.
+{«~Rebuilding community ecology from functional traits~»}. \emph{Trends
+in Ecology \& Evolution} 21 (4): 178‑85.
+\url{https://doi.org/10.1016/j.tree.2006.02.002}.
+
+\bibitem[\citeproctext]{ref-medeiros2017}
+Medeiros, Camila Ineu, Camila Both, Taran Grant, et Sandra Maria Hartz.
+2017. {«~Invasion of the Acoustic Niche: Variable Responses by Native
+Species to Invasive American Bullfrog Calls~»}. \emph{Biological
+Invasions} 19 (2): 675‑90.
+\url{https://doi.org/10.1007/s10530-016-1327-7}.
+
+\bibitem[\citeproctext]{ref-merchant2015}
+Merchant, Nathan D., Kurt M. Fristrup, Mark P. Johnson, et al. 2015.
+{«~Measuring Acoustic Habitats~»}. \emph{Methods in Ecology and
+Evolution} 6 (3): 257‑65. \url{https://doi.org/10.1111/2041-210X.12330}.
+
+\bibitem[\citeproctext]{ref-monnet1993}
+Monnet, Claude, Jean-Claude Thibault, et Albert Varney. 1993.
+{«~Stability and Changes During the Twentieth Century in the Breeding
+Landbirds of Tahiti (Polynesia)~»}. \emph{Bird Conservation
+International} 3 (4): 261‑80.
+\url{https://doi.org/10.1017/S0959270900002550}.
+
+\bibitem[\citeproctext]{ref-pijanowski2011}
+Pijanowski, Bryan C., Luis J. Villanueva-Rivera, Sarah L. Dumyahn, et
+al. 2011. {«~Soundscape Ecology: The Science of Sound in the
+Landscape~»}. \emph{BioScience} 61 (3): 203‑16.
+\url{https://doi.org/10.1525/bio.2011.61.3.6}.
+
+\bibitem[\citeproctext]{ref-ribeiro2022}
+Ribeiro, José W., Kristopher Harmon, Gabriel Augusto Leite, Tomaz
+Nascimento de Melo, Jack LeBien, et Marconi Campos-Cerqueira. 2022.
+{«~Passive Acoustic Monitoring as a Tool to Investigate the Spatial
+Distribution of Invasive Alien Species~»}. \emph{Remote Sensing} 14
+(18): 4565. \url{https://doi.org/10.3390/rs14184565}.
+
+\bibitem[\citeproctext]{ref-robert2019}
+Robert, Aloïs, Thierry Lengagne, Martim Melo, et al. 2019. {«~The Theory
+of Island Biogeography and Soundscapes: Species Diversity and the
+Organization of Acoustic Communities~»}. \emph{Journal of Biogeography}
+46 (9): 1901‑11. \url{https://doi.org/10.1111/jbi.13611}.
+
+\bibitem[\citeproctext]{ref-rogers2021}
+Rogers, Andrew M, Andrea S Griffin, Françoise Lermite, Berndt van
+Rensburg, Carla Archibald, et Salit Kark. 2021. {«~The role of invasion
+and urbanization gradients in shaping avian community composition~»}.
+\emph{Journal of Urban Ecology} 7 (1): juab030.
+\url{https://doi.org/10.1093/jue/juab030}.
+
+\bibitem[\citeproctext]{ref-rudge2026}
+Rudge, Leah, Angela Holland, John Schmit, et Greg Shriver. 2026. {«~In
+urban national parks acoustic indices represent avian habitat quality
+better than avian diversity~»}. \emph{Environmental and Sustainability
+Indicators} 30 (février): 101174.
+\url{https://doi.org/10.1016/j.indic.2026.101174}.
+
+\bibitem[\citeproctext]{ref-russell2019}
+Russell, James C., et Christoph Kueffer. 2019. {«~Island Biodiversity in
+the Anthropocene~»}. \emph{Annual Review of Environment and Resources}
+44: 31‑60. \url{https://doi.org/10.1146/annurev-environ-101718-033245}.
+
+\bibitem[\citeproctext]{ref-suxe1nchez-giraldo2021}
+Sánchez-Giraldo, Camilo, Camilo Correa Ayram, et Juan M. Daza. 2021.
+{«~Environmental sound as a mirror of landscape ecological integrity in
+monitoring programs~»}. \emph{Perspectives in Ecology and Conservation}
+19 (3): 319‑28. \url{https://doi.org/10.1016/j.pecon.2021.04.003}.
+
+\bibitem[\citeproctext]{ref-sax2007}
+Sax, Dov F., John J. Stachowicz, James H. Brown, et al. 2007.
+{«~Ecological and evolutionary insights from species invasions~»}.
+\emph{Trends in Ecology \& Evolution} 22 (9): 465‑71.
+\url{https://doi.org/10.1016/j.tree.2007.06.009}.
+
+\bibitem[\citeproctext]{ref-sayol2021}
+Sayol, Ferran, Robert S. C. Cooke, Alex L. Pigot, et al. 2021. {«~Loss
+of functional diversity through anthropogenic extinctions of island
+birds is not offset by biotic invasions~»}. \emph{Science Advances} 7
+(46): eabj5790. \url{https://doi.org/10.1126/sciadv.abj5790}.
+
+\bibitem[\citeproctext]{ref-seebens2017}
+Seebens, Hanno, Tim M. Blackburn, Ellie E. Dyer, et al. 2017. {«~No
+Saturation in the Accumulation of Alien Species Worldwide~»}.
+\emph{Nature Communications} 8 (1): 14435.
+\url{https://doi.org/10.1038/ncomms14435}.
+
+\bibitem[\citeproctext]{ref-shannon2016}
+Shannon, Graeme, Megan F. McKenna, Lisa M. Angeloni, et al. 2016. {«~A
+Synthesis of Two Decades of Research Documenting the Effects of Noise on
+Wildlife~»}. \emph{Biological Reviews} 91 (4): 982‑1005.
+\url{https://doi.org/10.1111/brv.12207}.
+
+\bibitem[\citeproctext]{ref-soares2021}
+Soares, Filipa C., Ana I. Leal, Jorge M. Palmeirim, et Ricardo F. De
+Lima. 2021. {«~Niche Differences May Reduce Susceptibility to
+Competition Between Native and Non{-}Native Birds in Oceanic Islands~»}.
+\emph{Diversity and Distributions} 27 (8): 1507‑18.
+\url{https://doi.org/10.1111/ddi.13298}.
+
+\bibitem[\citeproctext]{ref-soares2022}
+Soares, Filipa, Ricardo Lima, Jorge Palmeirim, Pedro Cardoso, et Ana
+Rodrigues. 2022. {«~Combined effects of bird extinctions and
+introductions in oceanic islands: Decreased functional diversity despite
+increased species richness~»}. \emph{Global Ecology and Biogeography} 31
+(mars): 1172‑83. \url{https://doi.org/10.1111/geb.13494}.
+
+\bibitem[\citeproctext]{ref-sobral2016}
+Sobral, Fernando L., Alexander C. Lees, et Marcus V. Cianciaruso. 2016.
+{«~Introductions Do Not Compensate for Functional and Phylogenetic
+Losses Following Extinctions in Insular Bird Assemblages~»}.
+\emph{Ecology Letters} 19 (9): 1091‑100.
+\url{https://doi.org/10.1111/ele.12646}.
+
+\bibitem[\citeproctext]{ref-spatz2017}
+Spatz, Dena R., Kelly M. Zilliacus, Nick D. Holmes, et al. 2017.
+{«~Globally threatened vertebrates on islands with invasive species~»}.
+\emph{Science Advances} 3 (10): e1603080.
+\url{https://doi.org/10.1126/sciadv.1603080}.
+
+\bibitem[\citeproctext]{ref-steadman1995}
+Steadman, David W. 1995. {«~Prehistoric Extinctions of Pacific Island
+Birds: Biodiversity Meets Zooarchaeology~»}. \emph{Science} 267 (5201):
+1123‑31. \url{https://doi.org/10.1126/science.267.5201.1123}.
+
+\bibitem[\citeproctext]{ref-thibault2017}
+Thibault, Jean-Claude, et Alice Cibois. 2017. \emph{Birds of Eastern
+Polynesia. A biogeographic Atlas}.
+
+\bibitem[\citeproctext]{ref-towsey2014}
+Towsey, Michael, Jason Wimmer, Ian Williamson, et Paul Roe. 2014. {«~The
+use of acoustic indices to determine avian species richness in
+audio-recordings of the environment~»}. \emph{Ecological Informatics},
+Ecological Acoustics, vol. 21 (mai): 110‑19.
+\url{https://doi.org/10.1016/j.ecoinf.2013.11.007}.
+
+\bibitem[\citeproctext]{ref-villanueva-rivera2011}
+Villanueva-Rivera, Luis J., Bryan C. Pijanowski, Jarrod Doucette, et
+Burak Pekin. 2011. {«~A Primer of Acoustic Analysis for Landscape
+Ecologists~»}. \emph{Landscape Ecology} 26 (9): 1233‑46.
+\url{https://doi.org/10.1007/s10980-011-9636-9}.
+
+\bibitem[\citeproctext]{ref-whittaker2017}
+Whittaker, Robert J., José María Fernández-Palacios, Thomas J. Matthews,
+Michael K. Borregaard, et Kostas A. Triantis. 2017. {«~Island
+biogeography: Taking the long view of nature{'}s laboratories~»}.
+\emph{Science} 357 (6354): eaam8326.
+\url{https://doi.org/10.1126/science.aam8326}.
+
+\end{CSLReferences}
+
+
+
+
+\end{document}
