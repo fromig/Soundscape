@@ -6,6 +6,7 @@ format:
     toc: true
   stylisharticle-pdf:
     keep-tex: true
+    table-use-booktabs: false
     # Color example, see "Text color"
     header-includes:
       \definecolor{grey}{RGB}{191, 191, 191}
@@ -84,7 +85,7 @@ They can also provide indicators on soundscape disturbances [@villanueva-rivera2
 
 *Implication for oceanic islands*
 
-In oceanic islands, ecological complexity is threathened by human pressure (urbanisation, invasion).
+In oceanic islands, ecological complexity is threatened by human pressure (urbanisation, invasion).
 Soundscape studies offers a good tool to monitor invasions, extinction, and assemblage turnover [@farina2012; @ribeiro2022].
 Such example exist with the study of an invasive ant leading to impoverishment of the soundscape in New Caledonian forests [@gasc2018].
 Species assemblages interact acoustically and reflect a dynamic processes called an acoustic community [@lellouch2014; @farina2016].
