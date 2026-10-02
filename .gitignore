@@ -8,6 +8,7 @@
 *_files/
 *.log
 *_cache/
+*index_files/
 *.png
 *.docx
 *.xlsx
