@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Félix Romiguière">
+<meta name="keywords" content="template, demo">
+
+<title>Demo Stylish Article</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-a4e28a151ec0c52cda9fef9a7fda4176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="colors.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table des matières</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (stylisharticle)</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Demo Stylish Article</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Auteur·rice</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://example.org/">Félix Romiguière</a> <a href="mailto:felix.romiguiere@etu.umontpellier.fr" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0000-0000-0000" class="quarto-title-author-orcid" aria-label="ORCID profile for Félix Romiguière"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Université de Montpellier
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Résumé</div>
+    <p>Document pour le début de rédaction de l’article sur Tahiti Soundscape</p>
+  </div>
+</div>
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Mots clés</div>
+    <p>template, demo</p>
+  </div>
+</div>
+
+</header>
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p><em>Oceanic island urbanisation and non -native species invasion</em></p>
+<p>Oceanic island are small sized with unique biodiversity and simplified communities shaped by human influence. They so stands out as unique ecosystems useful to study the impacts of human activities <span class="citation" data-cites="whittaker2017 russell2019">(<a href="#ref-whittaker2017" role="doc-biblioref">Whittaker et al. 2017</a>; <a href="#ref-russell2019" role="doc-biblioref">Russell et Kueffer 2019</a>)</span>. Oceanic island tends to be more sensitive to species introductions and extensive anthropogenic land-used modification <span class="citation" data-cites="whittaker2017 spatz2017 russell2019">(<a href="#ref-whittaker2017" role="doc-biblioref">Whittaker et al. 2017</a>; <a href="#ref-spatz2017" role="doc-biblioref">Spatz et al. 2017</a>; <a href="#ref-russell2019" role="doc-biblioref">Russell et Kueffer 2019</a>)</span>. For island in particular, avian species have been among the most concerned taxa, having their community assemblages shaped by both invasion and extensive urbanisation processes <span class="citation" data-cites="boyer2014 spatz2017 rogers2021">(<a href="#ref-boyer2014" role="doc-biblioref">Boyer et Jetz 2014</a>; <a href="#ref-spatz2017" role="doc-biblioref">Spatz et al. 2017</a>; <a href="#ref-rogers2021" role="doc-biblioref">Rogers et al. 2021</a>)</span>.</p>
+<p><em>Interspecific competition and homogenization in islands</em></p>
+<p>Non-native birds are issued from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae ..) mainly introduced for hunting and aesthetic purposes <span class="citation" data-cites="blackburn2001 dyer2017">(<a href="#ref-blackburn2001" role="doc-biblioref">Blackburn et Duncan 2001</a>; <a href="#ref-dyer2017" role="doc-biblioref">Dyer et al. 2017</a>)</span>. These species show peculiar traits adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to mostly include species occuring in forests <span class="citation" data-cites="soares2021">(<a href="#ref-soares2021" role="doc-biblioref">F. C. Soares et al. 2021</a>)</span>. Non-native species may outcompete native for essential ressources, and can affect population dynamic for native species <span class="citation" data-cites="davis2003">(<a href="#ref-davis2003" role="doc-biblioref">Davis 2003</a>)</span>. As shown with the introduction of the Japanese white eye in Hawai’i <span class="citation" data-cites="blackburn2009">(<a href="#ref-blackburn2009" role="doc-biblioref">Blackburn et al. 2009</a>)</span>. Interspecific competition can stand as a strong driver for native non-native species assemblages <span class="citation" data-cites="mcgill2006">(<a href="#ref-mcgill2006" role="doc-biblioref">McGill et al. 2006</a>)</span>. Combined effect of the growing loss of native ecosystems and continued introduction of birds species, especially of forest-dwelling birds, intensify non-native competition threats <span class="citation" data-cites="sax2007">(<a href="#ref-sax2007" role="doc-biblioref">Sax et al. 2007</a>)</span>. Moreover, the introduction of functionnaly similar species, promotes negative impact through functionnal homogenisation of island bird assemblages <span class="citation" data-cites="sobral2016 sayol2021 soares2022">(<a href="#ref-sobral2016" role="doc-biblioref">Sobral et al. 2016</a>; <a href="#ref-sayol2021" role="doc-biblioref">Sayol et al. 2021</a>; <a href="#ref-soares2022" role="doc-biblioref">F. Soares et al. 2022</a>)</span>.</p>
+<p><em>General context of Soundscape and ecoacoustic, acoustic indices</em></p>
+<p>Advance in soundscape ecology, enabled better understanding of structure and dynamic of the sonic environments <span class="citation" data-cites="pijanowski2011">(<a href="#ref-pijanowski2011" role="doc-biblioref">Pijanowski et al. 2011</a>)</span>. The soundscape incorpore all components, classified according to the sound sources: geophony (climate and geography), biophony (all living organisms), and anthrophony (human activities) <span class="citation" data-cites="pijanowski2011">(<a href="#ref-pijanowski2011" role="doc-biblioref">Pijanowski et al. 2011</a>)</span>. Complexity of these acoustic emissions can be characterise via acoustic indices that creates a numeric summary of the soundscape <span class="citation" data-cites="farina2012">(<a href="#ref-farina2012" role="doc-biblioref">Farina et Pieretti 2012</a>)</span>. Ecological meaning is inferred by relating acoustic indices to diversity metrics <span class="citation" data-cites="towsey2014 eldridge2018 dröge2021">(<a href="#ref-towsey2014" role="doc-biblioref">Towsey et al. 2014</a>; <a href="#ref-eldridge2018" role="doc-biblioref">Eldridge et al. 2018</a>; <a href="#ref-dröge2021" role="doc-biblioref">Dröge et al. 2021</a>)</span>, habitat conditions <span class="citation" data-cites="fuller2015 sánchez-giraldo2021 rudge2026">(<a href="#ref-fuller2015" role="doc-biblioref">Fuller et al. 2015</a>; <a href="#ref-sánchez-giraldo2021" role="doc-biblioref">Sánchez-Giraldo et al. 2021</a>; <a href="#ref-rudge2026" role="doc-biblioref">Rudge et al. 2026</a>)</span> or temporal dynamics <span class="citation" data-cites="gage2014">(<a href="#ref-gage2014" role="doc-biblioref">Gage et Axel 2014</a>)</span>. They can also provide indicators on soundscape disturbances <span class="citation" data-cites="villanueva-rivera2011">(<a href="#ref-villanueva-rivera2011" role="doc-biblioref">Villanueva-Rivera et al. 2011</a>)</span>.</p>
+<p><em>Implication for oceanic islands</em></p>
+<p>In oceanic islands, ecological complexity is threatened by human pressure (urbanisation, invasion). Soundscape studies offers a good tool to monitor invasions, extinction, and assemblage turnover <span class="citation" data-cites="farina2012 ribeiro2022">(<a href="#ref-farina2012" role="doc-biblioref">Farina et Pieretti 2012</a>; <a href="#ref-ribeiro2022" role="doc-biblioref">Ribeiro et al. 2022</a>)</span>. Such example exist with the study of an invasive ant leading to impoverishment of the soundscape in New Caledonian forests <span class="citation" data-cites="gasc2018">(<a href="#ref-gasc2018" role="doc-biblioref">Gasc et al. 2018</a>)</span>. Species assemblages interact acoustically and reflect a dynamic processes called an acoustic community <span class="citation" data-cites="lellouch2014 farina2016">(<a href="#ref-lellouch2014" role="doc-biblioref">Lellouch et al. 2014</a>; <a href="#ref-farina2016" role="doc-biblioref">Farina et James 2016</a>)</span>. In oceanic islands, acoustic communities are modified by non-native species introduction, having strong implications for native species acoutic habitat and their soundtope quality modification <span class="citation" data-cites="farina2014 merchant2015">(<a href="#ref-farina2014" role="doc-biblioref">Farina 2014</a>; <a href="#ref-merchant2015" role="doc-biblioref">Merchant et al. 2015</a>)</span>. The soundtope represent the acoustic pattern created by the distribution of biophonies <span class="citation" data-cites="farina2014">(<a href="#ref-farina2014" role="doc-biblioref">Farina 2014</a>)</span>. Whereas the acoustic habitat incorpore the soundtope and add the environmental acoustic conditions in which the species assemblage is leaving <span class="citation" data-cites="merchant2015 farina2016">(<a href="#ref-merchant2015" role="doc-biblioref">Merchant et al. 2015</a>; <a href="#ref-farina2016" role="doc-biblioref">Farina et James 2016</a>)</span>.</p>
+<p><em>Acoustic implication</em></p>
+<p>Recent studies have pointed out the potential importance of invasive species as underappreciated source of novel noise, that could alter acoustic communication among native species <span class="citation" data-cites="hopkins2022">(<a href="#ref-hopkins2022" role="doc-biblioref">Hopkins et al. 2022</a>)</span> <span class="citation" data-cites="hunt2024">(<a href="#ref-hunt2024" role="doc-biblioref">Hunt et al. 2024</a>)</span>. In the context of oceanic island, diminished bird richness reflect fewer vocalizing species, resulting in less saturated soundscapes than mainland <span class="citation" data-cites="robert2019">(<a href="#ref-robert2019" role="doc-biblioref">Robert et al. 2019</a>)</span>. So, acoustic interferences are anticipated to lessened on islands. Yet, introduction of non-native species are numerous and is expected to continue to increase in islands <span class="citation" data-cites="seebens2017">(<a href="#ref-seebens2017" role="doc-biblioref">Seebens et al. 2017</a>)</span>. Compared to native species, loudness and high occurrence rate of vocalization can be characteristic for invasive species <span class="citation" data-cites="hopkins2022">(<a href="#ref-hopkins2022" role="doc-biblioref">Hopkins et al. 2022</a>)</span>. For example, over the course of one year, invasive Pekin Robins’ (<em>Leiothrix lutea</em>) calls made up 37% of all bird songs in a shrubland in their invaded range in Europe <span class="citation" data-cites="farina2013">(<a href="#ref-farina2013" role="doc-biblioref">Farina et al. 2013</a>)</span>. Likewise, calls of invasive birds such as Common Mynas (<em>Acridotheres tristis</em>) seem to dominate the urban environments they have invaded (personal information from <span class="citation" data-cites="hopkins2022">(<a href="#ref-hopkins2022" role="doc-biblioref">Hopkins et al. 2022</a>)</span>). Plus, timing of calls between native and invasive are very similar, and may creates overlap, important for acoustic competition <span class="citation" data-cites="farina2013 bleach2015a">(<a href="#ref-farina2013" role="doc-biblioref">Farina et al. 2013</a>; <a href="#ref-bleach2015a" role="doc-biblioref">Bleach et al. 2015</a>)</span></p>
+<p>This novel biotic noises are quite attuned to mask vital information encoded in acoustic signals, and may impact frequencies, reduce perception and discrimination of the latter <span class="citation" data-cites="lohr2003">(<a href="#ref-lohr2003" role="doc-biblioref">Lohr et al. 2003</a>)</span>. This masking effect can negatively affect communication, movement, vigilance, mating and foraging <span class="citation" data-cites="shannon2016">(<a href="#ref-shannon2016" role="doc-biblioref">Shannon et al. 2016</a>)</span>. Affecting individual survival and reproductive success <span class="citation" data-cites="halfwerk2011 medeiros2017">(<a href="#ref-halfwerk2011" role="doc-biblioref">Halfwerk et al. 2011</a>; <a href="#ref-medeiros2017" role="doc-biblioref">Medeiros et al. 2017</a>)</span>. Therefore, the calls of non-native species, can bring a significant avenue for acoustic competition with native species and may dominates insular soundscape which favored it’s homogenization <span class="citation" data-cites="farina2013">(<a href="#ref-farina2013" role="doc-biblioref">Farina et al. 2013</a>)</span>. Still, evidence in oceanic island are scarce and need further investigation <span class="citation" data-cites="hopkins2022 hunt2024">(<a href="#ref-hopkins2022" role="doc-biblioref">Hopkins et al. 2022</a>; <a href="#ref-hunt2024" role="doc-biblioref">Hunt et al. 2024</a>)</span>.</p>
+<p><em>Problematisation</em></p>
+<p>Here, we sought to investigate the variation in saturation, intensity, complexity of signal emissions at the acoustic habitat and soundtope level of the soundscape, in relation to native/non-native bird assemblage and habitat factors, across the habitat gradients Tahiti. We predicted that urbanisation gradients drives relevant acoustic indices results for the acoustic habitat level <span class="citation" data-cites="fairbrass2017">(<a href="#ref-fairbrass2017" role="doc-biblioref">Fairbrass et al. 2017</a>)</span>. We also predicted that differences in bird assemblage would drive the variation at the soundtope level, and that non-native species in these assemblages have higher implication in acoustic indices computation compared to native species. Given that urbanisation gradient and non-native dominated assemblage represents a combined effect. We expect that urban sites have more saturated and complex soundscape patterns due to both factors compared to deep forested sites.</p>
+</section>
+<section id="methods" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Methods</h1>
+<p><em>Study area</em></p>
+<p>The study was conducted in Tahiti, French Polynesia. Tahiti is the largest (1,042 km²) island of French Polynesia <span class="citation" data-cites="monnet1993">(<a href="#ref-monnet1993" role="doc-biblioref">Monnet et al. 1993</a>)</span>. The climate is tropical with an average annual temperature of 26,5 °C and annual rainfall of 1700 mm in the coastal plain of the leeward coast of Tahiti Nui, reaching 4000 mm on the windward coast and Tahiti Iti, and up to 8000 mm in the center of Tahiti Nui (Laurent source quoin atlas meteorologique accès?). Islands of the Pacific ocean undergoes strong impoverishment with numerous bird extinctions due to first Polynesian arrival in the 13th century and Europeans in the 18th century (Thibault 1988).<span class="citation" data-cites="bellwood1978 monnet1993 steadman1995">(<a href="#ref-bellwood1978" role="doc-biblioref">Bellwood 1978</a>; <a href="#ref-monnet1993" role="doc-biblioref">Monnet et al. 1993</a>; <a href="#ref-steadman1995" role="doc-biblioref">Steadman 1995</a>)</span> From 1960 to 1990, strong habitat modification took places due to development, costal urbanisation and forest clearance (Blanchet 1986)<span class="citation" data-cites="monnet1993">(<a href="#ref-monnet1993" role="doc-biblioref">Monnet et al. 1993</a>)</span>. In Tahiti “…” terrestrials bird species occurs, 12 of them are non-native <span class="citation" data-cites="thibault2017">(<a href="#ref-thibault2017" role="doc-biblioref">Thibault et Cibois 2017</a>)</span>. Introduced birds have generally the highest densities in lowland, non-forested habitats such as urban areas or agricultural fields, and lower densities in high-elevation, contiguous forest, where native birds resides <span class="citation" data-cites="monnet1993">(<a href="#ref-monnet1993" role="doc-biblioref">Monnet et al. 1993</a>)</span> (besoin source moins loin pour Tahiti or personal observation).</p>
+<p><em>Acoustic data collection</em></p>
+<p>Passive acoustic data was collected using SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA) from 2024 to 2026. In total 69 sites from different habitat types ( Forest = , … rural or suburban = , .. Urban = ) were surveyed in valleys along an attitudinal gradients. Stations recorded along the same valley’s gradient, so each gradient as staggering dates. Acoustic recording units (ARUs) were programmed to record continuously and placed at 1,5 meters above the ground.Devices recorded for “…” per station, with a total of “…” hours recorded. Recordings were made as .WAV files with a “…” Hz sampling rate and gain of “…” dB, with monophonic and 16 Bits formats.</p>
+<p><em>Soundscape index metrics</em></p>
+<p>We selected nine relevant acoustic indices to encompass the sonic emissions heterogeneity for the acoustic habitat and the soundtope of each sampling site. Choice of indices were based on their relevance to reflect patterns of variability, heterogeneity, complexity of both soundscape level. The use of several acoustic indices was prioritize as multi index analysis have been shown to be more effective than single index investigations <span class="citation" data-cites="bradfer-lawrence2020">(<a href="#ref-bradfer-lawrence2020" role="doc-biblioref">Bradfer-Lawrence et al. 2020</a>)</span>. Acoustic indices were estimated for each 10-min recordings. We used indices median output per hour for better control of index variation <span class="citation" data-cites="bradfer-lawrence2019">(<a href="#ref-bradfer-lawrence2019" role="doc-biblioref">Bradfer-Lawrence et al. 2019</a>)</span>. Acoustic indices output were normalized to facilitate comparisons.</p>
+<p>Two different frequency limits were applied for the upper limit and a low frequency threshold for devices glitches. For the soundtope the limit was (… Hz) to reflect Tahiti bird community emissions. Recordings containing rainfall sounds were excluded from the calculation at this soundscape level. For the acoustic habitat, the limit was (… Hz) to encompass all sonic emissions that could affect the bird assemblages. Recording containing rainfall sounds were included in the calculation at this soundscape level. All indices were estimated using the default settings with the packages ‘soundecology’ (…) and seewave (…) packages in R (..).</p>
+<p>(Table used for soundscape and bird acoustic community monitoring, with hypothesis)</p>
+<p><em>Habitat metrics</em></p>
+<p>Two metrics, the Hard Surface Area (HSA) and the open herbaceous cover (HERB) were chosen to reflect habitat types and heterogeneity along the attitudinal gradients. HSA and HERB ranges between 0 and 100 %. Respectively, higher values indicates the important cover of human-modified surfaces and open herbaceous areas. Habitat covers map was estimated using polygon surfaces in 100 meter radius circle around each ARUs positions in Google Earth (Google Earth Pro.7.3.7.1327).</p>
+<p><em>Avian caracterisation</em></p>
+<p>Two ten minute aural and visual identification in acoustic recordings was conducted for each site, to obtain bird richness count. Aural and visual acoustic identification were conducted from 06:00 am to 06:10 am in recordings free of rainfall or strong acoustic disturbance. From the aural identification database, several assemblage metrics were derived: total richness (count), non-native richness (count), presence of native bird (binomial), presence of Myna (binomial). Non-native bird species encountered were “…” Native bird species monitored were “…”.</p>
+<p><em>Bird assemblage metrics in response to habitat characteristic analysis</em></p>
+<p>Habitat as direct driver of bird assemblage was investigated. The three bird assemblage metrics were modeled independently as responses variables using “…” for or “…” for “…” distributions using the habitat metrics and altitude as independent fixed variables. All generalized linear mixed-effects models (GLMER) were made using the “GlmmTMB” package <span class="citation" data-cites="brooks2017">(<a href="#ref-brooks2017" role="doc-biblioref">Brooks et al. 2017</a>)</span>.</p>
+<p><em>Acoustic indices in response to bird assemblage and habitat metrics analysis</em></p>
+<p>Prior to analysis, acoustic indices output were tested for correlations.</p>
+<p>To investigate if acoustic indices reflect metrics of native/non native bird assemblage, GLMER were used to model each acoustic index (…) individually as response variable, for both acoustic habitat and soundtope level. In response to the following independent variables: one assemblage metric at a time and habitat metrics. All models included a control fixed effect for the time (hour of the day) to account for temporal autocorrelation and random fixed effects for the site and commune. Models used a “…” distribution with a “…” function. All statistical analyses were performed in R v.().</p>
+</section>
+<section id="bibliography" class="level1 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bellwood1978" class="csl-entry" role="listitem">
+Bellwood, Peter. 1978. <em>The Polynesians: Prehistory of an Island People</em>. Ancient Peoples et Places. Thames; Hudson. <a href="https://catalogue.nla.gov.au/catalog/2544013">https://catalogue.nla.gov.au/catalog/2544013</a>.
+</div>
+<div id="ref-blackburn2001" class="csl-entry" role="listitem">
+Blackburn, Tim M., et Richard P. Duncan. 2001. <span>«&nbsp;Determinants of Establishment Success in Introduced Birds&nbsp;»</span>. <em>Nature</em> 414 (6860): 195‑97. <a href="https://doi.org/10.1038/35102557">https://doi.org/10.1038/35102557</a>.
+</div>
+<div id="ref-blackburn2009" class="csl-entry" role="listitem">
+Blackburn, Tim M., Julie L. Lockwood, et Phillip Cassey. 2009. <em>Avian Invasions: The Ecology and Evolution of Exotic Birds</em>. Oxford University Press. <a href="https://doi.org/10.1093/acprof:oso/9780199232543.001.0001">https://doi.org/10.1093/acprof:oso/9780199232543.001.0001</a>.
+</div>
+<div id="ref-bleach2015a" class="csl-entry" role="listitem">
+Bleach, Iris, Christa Beckmann, Camila Both, Gregory Brown, et Richard Shine. 2015. <span>«&nbsp;Noisy neighbours at the frog pond: effects of invasive cane toads on the calling behaviour of native Australian frogs&nbsp;»</span>. <em>Behavioral Ecology and Sociobiology</em> 69 (février). <a href="https://doi.org/10.1007/s00265-015-1879-z">https://doi.org/10.1007/s00265-015-1879-z</a>.
+</div>
+<div id="ref-boyer2014" class="csl-entry" role="listitem">
+Boyer, Alison G., et Walter Jetz. 2014. <span>«&nbsp;Extinctions and the Loss of Ecological Function in Island Bird Communities&nbsp;»</span>. <em>Global Ecology and Biogeography</em> 23 (6): 679‑88. <a href="https://doi.org/10.1111/geb.12147">https://doi.org/10.1111/geb.12147</a>.
+</div>
+<div id="ref-bradfer-lawrence2020" class="csl-entry" role="listitem">
+Bradfer-Lawrence, Tom, Nils Bunnefeld, Nick Gardner, Stephen G. Willis, et Daisy H. Dent. 2020. <span>«&nbsp;Rapid assessment of avian species richness and abundance using acoustic indices&nbsp;»</span>. <em>Ecological Indicators</em> 115 (août): 106400. <a href="https://doi.org/10.1016/j.ecolind.2020.106400">https://doi.org/10.1016/j.ecolind.2020.106400</a>.
+</div>
+<div id="ref-bradfer-lawrence2019" class="csl-entry" role="listitem">
+Bradfer-Lawrence, Tom, Nick Gardner, Lynsey Bunnefeld, Nils Bunnefeld, Stephen G. Willis, et Daisy H. Dent. 2019. <span>«&nbsp;Guidelines for the Use of Acoustic Indices in Environmental Research&nbsp;»</span>. <em>Methods in Ecology and Evolution</em> 10 (10): 1796‑807. <a href="https://doi.org/10.1111/2041-210X.13254">https://doi.org/10.1111/2041-210X.13254</a>.
+</div>
+<div id="ref-brooks2017" class="csl-entry" role="listitem">
+Brooks, Mollie E., Kasper Kristensen, Koen J. van Benthem, et al. 2017. <span>«&nbsp;The R Journal: glmmTMB Balances Speed and Flexibility Among Packages for Zero-inflated Generalized Linear Mixed Modeling&nbsp;»</span>. <em>The R Journal</em> 9 (2): 378‑400. <a href="https://doi.org/10.32614/RJ-2017-066">https://doi.org/10.32614/RJ-2017-066</a>.
+</div>
+<div id="ref-davis2003" class="csl-entry" role="listitem">
+Davis, Mark A. 2003. <span>«&nbsp;Biotic Globalization: Does Competition from Introduced Species Threaten Biodiversity?&nbsp;»</span> <em>BioScience</em> 53 (5): 481‑89. <a href="https://doi.org/10.1641/0006-3568(2003)053[0481:BGDCFI]2.0.CO;2">https://doi.org/10.1641/0006-3568(2003)053[0481:BGDCFI]2.0.CO;2</a>.
+</div>
+<div id="ref-dröge2021" class="csl-entry" role="listitem">
+Dröge, Saskia, Dominic Andreas Martin, Rouvah Andriafanomezantsoa, et al. 2021. <span>«&nbsp;Listening to a changing landscape: Acoustic indices reflect bird species richness and plot-scale vegetation structure across different land-use types in north-eastern Madagascar&nbsp;»</span>. <em>Ecological Indicators</em> 120 (janvier): 106929. <a href="https://doi.org/10.1016/j.ecolind.2020.106929">https://doi.org/10.1016/j.ecolind.2020.106929</a>.
+</div>
+<div id="ref-dyer2017" class="csl-entry" role="listitem">
+Dyer, Ellie E., Phillip Cassey, David W. Redding, et al. 2017. <span>«&nbsp;The Global Distribution and Drivers of Alien Bird Species Richness&nbsp;»</span>. <em>PLOS Biology</em> 15 (1): e2000942. <a href="https://doi.org/10.1371/journal.pbio.2000942">https://doi.org/10.1371/journal.pbio.2000942</a>.
+</div>
+<div id="ref-eldridge2018" class="csl-entry" role="listitem">
+Eldridge, Alice, Patrice Guyot, Paola Moscoso, Alison Johnston, Ying Eyre-Walker, et Mika Peck. 2018. <span>«&nbsp;Sounding out ecoacoustic metrics: Avian species richness is predicted by acoustic indices in temperate but not tropical habitats&nbsp;»</span>. <em>Ecological Indicators</em> 95 (décembre): 939‑52. <a href="https://doi.org/10.1016/j.ecolind.2018.06.012">https://doi.org/10.1016/j.ecolind.2018.06.012</a>.
+</div>
+<div id="ref-fairbrass2017" class="csl-entry" role="listitem">
+Fairbrass, Alison J., Peter Rennert, Carol Williams, Helena Titheridge, et Kate E. Jones. 2017. <span>«&nbsp;Biases of acoustic indices measuring biodiversity in urban areas&nbsp;»</span>. <em>Ecological Indicators</em> 83 (décembre): 169‑77. <a href="https://doi.org/10.1016/j.ecolind.2017.07.064">https://doi.org/10.1016/j.ecolind.2017.07.064</a>.
+</div>
+<div id="ref-farina2014" class="csl-entry" role="listitem">
+Farina, Almo. 2014. <em>Soundscape Ecology: Principles, Patterns, Methods and Applications</em>. Springer Netherlands. <a href="https://doi.org/10.1007/978-94-007-7374-5">https://doi.org/10.1007/978-94-007-7374-5</a>.
+</div>
+<div id="ref-farina2016" class="csl-entry" role="listitem">
+Farina, Almo, et Philip James. 2016. <span>«&nbsp;The acoustic communities: Definition, description and ecological role&nbsp;»</span>. <em>Bio Systems</em> 147 (septembre): 11‑20. <a href="https://doi.org/10.1016/j.biosystems.2016.05.011">https://doi.org/10.1016/j.biosystems.2016.05.011</a>.
+</div>
+<div id="ref-farina2012" class="csl-entry" role="listitem">
+Farina, Almo, et Nadia Pieretti. 2012. <span>«&nbsp;The soundscape ecology: A new frontier of landscape research and its application to islands and coastal systems&nbsp;»</span>. <em>Journal of Marine and Island Cultures</em> 1 (juin): 21‑26. <a href="https://doi.org/10.1016/j.imic.2012.04.002">https://doi.org/10.1016/j.imic.2012.04.002</a>.
+</div>
+<div id="ref-farina2013" class="csl-entry" role="listitem">
+Farina, Almo, Nadia Pieretti, et Niki Morganti. 2013. <span>«&nbsp;Acoustic Patterns of an Invasive Species: The Red-Billed Leiothrix ( <span><em>Leiothrix Lutea</em></span> Scopoli 1786) in a Mediterranean Shrubland&nbsp;»</span>. <em>Bioacoustics</em> 22 (3): 175‑94. <a href="https://doi.org/10.1080/09524622.2012.761571">https://doi.org/10.1080/09524622.2012.761571</a>.
+</div>
+<div id="ref-fuller2015" class="csl-entry" role="listitem">
+Fuller, Susan, Anne C. Axel, David Tucker, et Stuart H. Gage. 2015. <span>«&nbsp;Connecting soundscape to landscape: Which acoustic index best describes landscape configuration?&nbsp;»</span> <em>Ecological Indicators</em> 58 (novembre): 207‑15. <a href="https://doi.org/10.1016/j.ecolind.2015.05.057">https://doi.org/10.1016/j.ecolind.2015.05.057</a>.
+</div>
+<div id="ref-gage2014" class="csl-entry" role="listitem">
+Gage, Stuart H., et Anne C. Axel. 2014. <span>«&nbsp;Visualization of temporal change in soundscape power of a Michigan lake habitat over a 4-year period&nbsp;»</span>. <em>Ecological Informatics</em>, Ecological Acoustics, vol. 21 (mai): 100‑109. <a href="https://doi.org/10.1016/j.ecoinf.2013.11.004">https://doi.org/10.1016/j.ecoinf.2013.11.004</a>.
+</div>
+<div id="ref-gasc2018" class="csl-entry" role="listitem">
+Gasc, A., J. Anso, J. Sueur, H. Jourdan, et L. Desutter-Grandcolas. 2018. <span>«&nbsp;Cricket Calling Communities as an Indicator of the Invasive Ant Wasmannia Auropunctata in an Insular Biodiversity Hotspot&nbsp;»</span>. <em>Biological Invasions</em> 20 (5): 1099‑111. <a href="https://doi.org/10.1007/s10530-017-1612-0">https://doi.org/10.1007/s10530-017-1612-0</a>.
+</div>
+<div id="ref-halfwerk2011" class="csl-entry" role="listitem">
+Halfwerk, Wouter, Leonard J. M. Holleman, C(Kate). M. Lessells, et Hans Slabbekoorn. 2011. <span>«&nbsp;Negative Impact of Traffic Noise on Avian Reproductive Success&nbsp;»</span>. <em>Journal of Applied Ecology</em> 48 (1): 210‑19. <a href="https://doi.org/10.1111/j.1365-2664.2010.01914.x">https://doi.org/10.1111/j.1365-2664.2010.01914.x</a>.
+</div>
+<div id="ref-hopkins2022" class="csl-entry" role="listitem">
+Hopkins, Jaimie M., Will Edwards, et Lin Schwarzkopf. 2022. <span>«&nbsp;Invading the Soundscape: Exploring the Effects of Invasive Species<span>’</span> Calls on Acoustic Signals of Native Wildlife&nbsp;»</span>. <em>Biological Invasions</em> 24 (11): 3381‑93. <a href="https://doi.org/10.1007/s10530-022-02856-w">https://doi.org/10.1007/s10530-022-02856-w</a>.
+</div>
+<div id="ref-hunt2024" class="csl-entry" role="listitem">
+Hunt, Noah J., Thomas Ibanez, Adam A. Pack, et Patrick J. Hart. 2024. <span>«&nbsp;Signal Partitioning Between Native and Introduced Forest Birds of Hawai<span>‘</span>i Island&nbsp;»</span>. <em>Frontiers in Ecology and Evolution</em> 12 (août). <a href="https://doi.org/10.3389/fevo.2024.1399455">https://doi.org/10.3389/fevo.2024.1399455</a>.
+</div>
+<div id="ref-lellouch2014" class="csl-entry" role="listitem">
+Lellouch, Laurent, Sandrine Pavoine, Frédéric Jiguet, Hervé Glotin, et Jérôme Sueur. 2014. <span>«&nbsp;Monitoring Temporal Change of Bird Communities with Dissimilarity Acoustic Indices&nbsp;»</span>. <em>Methods in Ecology and Evolution</em> 5 (6): 495‑505. <a href="https://doi.org/10.1111/2041-210X.12178">https://doi.org/10.1111/2041-210X.12178</a>.
+</div>
+<div id="ref-lohr2003" class="csl-entry" role="listitem">
+Lohr, Bernard, Timothy F. Wright, et Robert J. Dooling. 2003. <span>«&nbsp;Detection and discrimination of natural calls in masking noise by birds: estimating the active space of a signal&nbsp;»</span>. <em>Animal Behaviour</em> 65 (4): 763‑77. <a href="https://doi.org/10.1006/anbe.2003.2093">https://doi.org/10.1006/anbe.2003.2093</a>.
+</div>
+<div id="ref-mcgill2006" class="csl-entry" role="listitem">
+McGill, Brian J., Brian J. Enquist, Evan Weiher, et Mark Westoby. 2006. <span>«&nbsp;Rebuilding community ecology from functional traits&nbsp;»</span>. <em>Trends in Ecology &amp; Evolution</em> 21 (4): 178‑85. <a href="https://doi.org/10.1016/j.tree.2006.02.002">https://doi.org/10.1016/j.tree.2006.02.002</a>.
+</div>
+<div id="ref-medeiros2017" class="csl-entry" role="listitem">
+Medeiros, Camila Ineu, Camila Both, Taran Grant, et Sandra Maria Hartz. 2017. <span>«&nbsp;Invasion of the Acoustic Niche: Variable Responses by Native Species to Invasive American Bullfrog Calls&nbsp;»</span>. <em>Biological Invasions</em> 19 (2): 675‑90. <a href="https://doi.org/10.1007/s10530-016-1327-7">https://doi.org/10.1007/s10530-016-1327-7</a>.
+</div>
+<div id="ref-merchant2015" class="csl-entry" role="listitem">
+Merchant, Nathan D., Kurt M. Fristrup, Mark P. Johnson, et al. 2015. <span>«&nbsp;Measuring Acoustic Habitats&nbsp;»</span>. <em>Methods in Ecology and Evolution</em> 6 (3): 257‑65. <a href="https://doi.org/10.1111/2041-210X.12330">https://doi.org/10.1111/2041-210X.12330</a>.
+</div>
+<div id="ref-monnet1993" class="csl-entry" role="listitem">
+Monnet, Claude, Jean-Claude Thibault, et Albert Varney. 1993. <span>«&nbsp;Stability and Changes During the Twentieth Century in the Breeding Landbirds of Tahiti (Polynesia)&nbsp;»</span>. <em>Bird Conservation International</em> 3 (4): 261‑80. <a href="https://doi.org/10.1017/S0959270900002550">https://doi.org/10.1017/S0959270900002550</a>.
+</div>
+<div id="ref-pijanowski2011" class="csl-entry" role="listitem">
+Pijanowski, Bryan C., Luis J. Villanueva-Rivera, Sarah L. Dumyahn, et al. 2011. <span>«&nbsp;Soundscape Ecology: The Science of Sound in the Landscape&nbsp;»</span>. <em>BioScience</em> 61 (3): 203‑16. <a href="https://doi.org/10.1525/bio.2011.61.3.6">https://doi.org/10.1525/bio.2011.61.3.6</a>.
+</div>
+<div id="ref-ribeiro2022" class="csl-entry" role="listitem">
+Ribeiro, José W., Kristopher Harmon, Gabriel Augusto Leite, Tomaz Nascimento de Melo, Jack LeBien, et Marconi Campos-Cerqueira. 2022. <span>«&nbsp;Passive Acoustic Monitoring as a Tool to Investigate the Spatial Distribution of Invasive Alien Species&nbsp;»</span>. <em>Remote Sensing</em> 14 (18): 4565. <a href="https://doi.org/10.3390/rs14184565">https://doi.org/10.3390/rs14184565</a>.
+</div>
+<div id="ref-robert2019" class="csl-entry" role="listitem">
+Robert, Aloïs, Thierry Lengagne, Martim Melo, et al. 2019. <span>«&nbsp;The Theory of Island Biogeography and Soundscapes: Species Diversity and the Organization of Acoustic Communities&nbsp;»</span>. <em>Journal of Biogeography</em> 46 (9): 1901‑11. <a href="https://doi.org/10.1111/jbi.13611">https://doi.org/10.1111/jbi.13611</a>.
+</div>
+<div id="ref-rogers2021" class="csl-entry" role="listitem">
+Rogers, Andrew M., Andrea S. Griffin, Françoise Lermite, Berndt van Rensburg, Carla Archibald, et Salit Kark. 2021. <span>«&nbsp;The role of invasion and urbanization gradients in shaping avian community composition&nbsp;»</span>. <em>Journal of Urban Ecology</em> 7 (1): juab030. <a href="https://doi.org/10.1093/jue/juab030">https://doi.org/10.1093/jue/juab030</a>.
+</div>
+<div id="ref-rudge2026" class="csl-entry" role="listitem">
+Rudge, Leah, Angela Holland, John Schmit, et Greg Shriver. 2026. <span>«&nbsp;In urban national parks acoustic indices represent avian habitat quality better than avian diversity&nbsp;»</span>. <em>Environmental and Sustainability Indicators</em> 30 (février): 101174. <a href="https://doi.org/10.1016/j.indic.2026.101174">https://doi.org/10.1016/j.indic.2026.101174</a>.
+</div>
+<div id="ref-russell2019" class="csl-entry" role="listitem">
+Russell, James C., et Christoph Kueffer. 2019. <span>«&nbsp;Island Biodiversity in the Anthropocene&nbsp;»</span>. <em>Annual Review of Environment and Resources</em> 44: 31‑60. <a href="https://doi.org/10.1146/annurev-environ-101718-033245">https://doi.org/10.1146/annurev-environ-101718-033245</a>.
+</div>
+<div id="ref-sánchez-giraldo2021" class="csl-entry" role="listitem">
+Sánchez-Giraldo, Camilo, Camilo Correa Ayram, et Juan M. Daza. 2021. <span>«&nbsp;Environmental sound as a mirror of landscape ecological integrity in monitoring programs&nbsp;»</span>. <em>Perspectives in Ecology and Conservation</em> 19 (3): 319‑28. <a href="https://doi.org/10.1016/j.pecon.2021.04.003">https://doi.org/10.1016/j.pecon.2021.04.003</a>.
+</div>
+<div id="ref-sax2007" class="csl-entry" role="listitem">
+Sax, Dov F., John J. Stachowicz, James H. Brown, et al. 2007. <span>«&nbsp;Ecological and evolutionary insights from species invasions&nbsp;»</span>. <em>Trends in Ecology &amp; Evolution</em> 22 (9): 465‑71. <a href="https://doi.org/10.1016/j.tree.2007.06.009">https://doi.org/10.1016/j.tree.2007.06.009</a>.
+</div>
+<div id="ref-sayol2021" class="csl-entry" role="listitem">
+Sayol, Ferran, Robert S. C. Cooke, Alex L. Pigot, et al. 2021. <span>«&nbsp;Loss of functional diversity through anthropogenic extinctions of island birds is not offset by biotic invasions&nbsp;»</span>. <em>Science Advances</em> 7 (46): eabj5790. <a href="https://doi.org/10.1126/sciadv.abj5790">https://doi.org/10.1126/sciadv.abj5790</a>.
+</div>
+<div id="ref-seebens2017" class="csl-entry" role="listitem">
+Seebens, Hanno, Tim M. Blackburn, Ellie E. Dyer, et al. 2017. <span>«&nbsp;No Saturation in the Accumulation of Alien Species Worldwide&nbsp;»</span>. <em>Nature Communications</em> 8 (1): 14435. <a href="https://doi.org/10.1038/ncomms14435">https://doi.org/10.1038/ncomms14435</a>.
+</div>
+<div id="ref-shannon2016" class="csl-entry" role="listitem">
+Shannon, Graeme, Megan F. McKenna, Lisa M. Angeloni, et al. 2016. <span>«&nbsp;A Synthesis of Two Decades of Research Documenting the Effects of Noise on Wildlife&nbsp;»</span>. <em>Biological Reviews</em> 91 (4): 982‑1005. <a href="https://doi.org/10.1111/brv.12207">https://doi.org/10.1111/brv.12207</a>.
+</div>
+<div id="ref-soares2021" class="csl-entry" role="listitem">
+Soares, Filipa C., Ana I. Leal, Jorge M. Palmeirim, et Ricardo F. De Lima. 2021. <span>«&nbsp;Niche Differences May Reduce Susceptibility to Competition Between Native and Non<span>-</span>Native Birds in Oceanic Islands&nbsp;»</span>. <em>Diversity and Distributions</em> 27 (8): 1507‑18. <a href="https://doi.org/10.1111/ddi.13298">https://doi.org/10.1111/ddi.13298</a>.
+</div>
+<div id="ref-soares2022" class="csl-entry" role="listitem">
+Soares, Filipa, Ricardo Lima, Jorge Palmeirim, Pedro Cardoso, et Ana Rodrigues. 2022. <span>«&nbsp;Combined effects of bird extinctions and introductions in oceanic islands: Decreased functional diversity despite increased species richness&nbsp;»</span>. <em>Global Ecology and Biogeography</em> 31 (mars): 1172‑83. <a href="https://doi.org/10.1111/geb.13494">https://doi.org/10.1111/geb.13494</a>.
+</div>
+<div id="ref-sobral2016" class="csl-entry" role="listitem">
+Sobral, Fernando L., Alexander C. Lees, et Marcus V. Cianciaruso. 2016. <span>«&nbsp;Introductions Do Not Compensate for Functional and Phylogenetic Losses Following Extinctions in Insular Bird Assemblages&nbsp;»</span>. <em>Ecology Letters</em> 19 (9): 1091‑100. <a href="https://doi.org/10.1111/ele.12646">https://doi.org/10.1111/ele.12646</a>.
+</div>
+<div id="ref-spatz2017" class="csl-entry" role="listitem">
+Spatz, Dena R., Kelly M. Zilliacus, Nick D. Holmes, et al. 2017. <span>«&nbsp;Globally threatened vertebrates on islands with invasive species&nbsp;»</span>. <em>Science Advances</em> 3 (10): e1603080. <a href="https://doi.org/10.1126/sciadv.1603080">https://doi.org/10.1126/sciadv.1603080</a>.
+</div>
+<div id="ref-steadman1995" class="csl-entry" role="listitem">
+Steadman, David W. 1995. <span>«&nbsp;Prehistoric Extinctions of Pacific Island Birds: Biodiversity Meets Zooarchaeology&nbsp;»</span>. <em>Science</em> 267 (5201): 1123‑31. <a href="https://doi.org/10.1126/science.267.5201.1123">https://doi.org/10.1126/science.267.5201.1123</a>.
+</div>
+<div id="ref-thibault2017" class="csl-entry" role="listitem">
+Thibault, Jean-Claude, et Alice Cibois. 2017. <em>Birds of Eastern Polynesia. A biogeographic Atlas</em>.
+</div>
+<div id="ref-towsey2014" class="csl-entry" role="listitem">
+Towsey, Michael, Jason Wimmer, Ian Williamson, et Paul Roe. 2014. <span>«&nbsp;The use of acoustic indices to determine avian species richness in audio-recordings of the environment&nbsp;»</span>. <em>Ecological Informatics</em>, Ecological Acoustics, vol. 21 (mai): 110‑19. <a href="https://doi.org/10.1016/j.ecoinf.2013.11.007">https://doi.org/10.1016/j.ecoinf.2013.11.007</a>.
+</div>
+<div id="ref-villanueva-rivera2011" class="csl-entry" role="listitem">
+Villanueva-Rivera, Luis J., Bryan C. Pijanowski, Jarrod Doucette, et Burak Pekin. 2011. <span>«&nbsp;A Primer of Acoustic Analysis for Landscape Ecologists&nbsp;»</span>. <em>Landscape Ecology</em> 26 (9): 1233‑46. <a href="https://doi.org/10.1007/s10980-011-9636-9">https://doi.org/10.1007/s10980-011-9636-9</a>.
+</div>
+<div id="ref-whittaker2017" class="csl-entry" role="listitem">
+Whittaker, Robert J., José María Fernández-Palacios, Thomas J. Matthews, Michael K. Borregaard, et Kostas A. Triantis. 2017. <span>«&nbsp;Island biogeography: Taking the long view of nature<span>’</span>s laboratories&nbsp;»</span>. <em>Science</em> 357 (6354): eaam8326. <a href="https://doi.org/10.1126/science.aam8326">https://doi.org/10.1126/science.aam8326</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copié");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copié");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
