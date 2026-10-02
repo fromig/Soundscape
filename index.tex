@@ -156,6 +156,9 @@
 \usepackage{orcidlink}  % Orcid logo and link to author page
 
 % -------------- Font size
+% R code: scriptsize
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\scriptsize}
 % R output: footnotesize
 \makeatletter
 \patchcmd{\@verbatim}
@@ -178,18 +181,21 @@
 \let\oldlt\longtable
 \let\endoldlt\endlongtable
 \def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
-\def\longtable@i[#1]{
-\begin{figure}[t]
+\def\longtable@i[#1]{\begin{figure}[t]
 \onecolumn
-\begin{minipage}{0.5\textwidth}\scriptsize
+\begin{minipage}{0.5\textwidth}
 \oldlt[#1]
 }
-\def\longtable@ii{
-\begin{figure}[t]
+\def\longtable@ii{\begin{figure}[t]
 \onecolumn
-\begin{minipage}{0.5\textwidth}\scriptsize
+\begin{minipage}{0.5\textwidth}
 \oldlt
 }
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
 \definecolor{red}{RGB}{255, 0, 0}
 \definecolor{green}{RGB}{0, 255, 0}
 \definecolor{blue}{RGB}{0, 0, 255}
@@ -369,7 +375,7 @@ disturbances (Villanueva-Rivera et al. 2011).
 
 \emph{Implication for oceanic islands}
 
-In oceanic islands, ecological complexity is threathened by human
+In oceanic islands, ecological complexity is threatened by human
 pressure (urbanisation, invasion). Soundscape studies offers a good tool
 to monitor invasions, extinction, and assemblage turnover (Farina et
 Pieretti 2012; Ribeiro et al. 2022). Such example exist with the study

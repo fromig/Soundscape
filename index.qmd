@@ -6,7 +6,6 @@ format:
     toc: true
   stylisharticle-pdf:
     keep-tex: true
-    table-use-booktabs: false
     # Color example, see "Text color"
     header-includes:
       \definecolor{grey}{RGB}{191, 191, 191}
