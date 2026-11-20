@@ -1,5 +1,5 @@
 ---
-title: "Native and non-native avian influence on the soundscape of Tahiti"
+title: "Introduced bird and habitat alteration shape the biophony of a tropical island: evidence from acoustic indices in Tahiti"
 # Output formats
 format:
   docx:
