@@ -57,132 +57,172 @@ corrauthorlabel: Corresponding Author
 
 # Introduction
 
-*Oceanic island urbanisation and species invasion*
+Parag 1: Islands as natural labs and conservation priorities • Islands are natural laboratories for studying the effects of environmental change, because their ecosystems are relatively simple (fewer species, simpler interaction networks, clearer boundaries) • They are also conservation priorities: they host many endemic species and a disproportionate share of recent extinctions • Island biotas are particularly sensitive to change, especially invasive species and habitat change
 
-Oceanic island are small sized with unique biodiversity and simplified communities shaped by human influence.
-They stands out as unique ecosystems useful to study the impacts of human activities [@whittaker2017; @russell2019].
-Oceanic island tends to be more sensitive to species introduction and extensive anthropogenic land-used modification [@whittaker2017; @spatz2017; @russell2019].
-For island in particular, avian species have been among the most concerned taxa, having their community assemblages shaped by both invasion and extensive urbanisation processes [@boyer2014; @spatz2017; @rogers2021].
+*Oceanic island: laboratories to study evolution and anthropic changes impacts, especially in birds*
 
-*Interspecific competition and homogenization in islands*
+Oceanic islands, because of their small size and remoteness, often host relatively species-poor communities, yet they are also hotspots of endemism and therefore conservation priority areas [@whittaker2017].
+The remoteness and relative simplicity of insular ecosystems likely explain their high sensitivity to anthropic threats such as biological invasions and habitat alteration [@whittaker2017; @spatz2017; @russell2019].
+Therefore, islands have been at the forefront of research in ecology and evolutionary biology.
+The relative simplicity of their communities allowed to historically disentangle evolutionary mechanisms (XX Darwin), while it provides a highly relevant context to understand the mechanisms of species responses to current anthropogenic changes.
+Birds have often been at the forefront of these studies.
+For example, Darwin’s finches in the Galapagos [@grant2008] and Hawaiian honey-creepers in Hawaiian islands [@pratt2005] are model taxa to study adaptive radiations.
+In parallel, conservation biologists have repeatedly demonstrated the high sensitivity of native insular bird communities to both biological invasion and habitat alteration [@boyer2014; @spatz2017; @rogers2021].
 
-Non-native birds are issued from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae) mainly introduced for hunting and aesthetic purposes [@blackburn2001; @dyer2017].
-These species show peculiar traits adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to mostly include species occurring in forests [@soares2021].
-Non-native species may out-compete native for essential resources, and can affect population dynamic for native species [@davis2003].
-As shown with the introduction of the Japanese white eye in Hawaii [@blackburn2009].
-Combined effect of the growing loss of native ecosystems and continued introduction of birds species, especially of forest-dwelling birds, intensify non-native competition threats [@sax2007].
-Moreover, the introduction of functionally similar species, promotes negative impact through homogenisation of island bird assemblages [@sobral2016; @sayol2021; @soares2022].
+Parag 2: Known impacts of invasive species and habitat change on native birds
 
-*General context of Soundscape and ecoacoustic, acoustic indices*
+• Birds are a classic focal group for studying threats in insular systems • Invasive species and habitat alteration are some of the most impactful threats on islands, having already driven several species to extinction (climate change likely to play a more and more important role in the near future) • Invasive species affect native species directly, through predation and competition • They also act indirectly, e.g. by altering ecological networks, ecosystem functions or habitats (e.g., invasive plants that change vegetation structur and the landscape) [@meyer1996] • In addition to invasive species, direct habitat change, especially urbanisation, also strongly affects native bird communities climate change likely to play a more and more important role in the near future)
 
-Advance in soundscape ecology, enabled better understanding of structure and dynamic of the sonic environments [@pijanowski2011].
-The soundscape comprehend all components, classified according to the sound sources: geophony (climate and geography), biophony (all living organisms), and anthropophony (human activities) [@pijanowski2011].
-Complexity of these acoustic emissions can be characterize via acoustic indices that creates a numeric summary of the soundscape [@farina2012].
-Ecological meaning is inferred by relating acoustic indices to diversity metrics [@towsey2014; @eldridge2018; @dröge2021], habitat conditions [@fuller2015; @sánchez-giraldo2021; @rudge2026] or temporal dynamics [@gage2014].
-They can also provide indicators on soundscape disturbances [@villanueva-rivera2011].
+Birds, as a data-rich taxon, allow a robust understanding of their ecology and distribution patterns [@delhoyo2020].
+They are frequent colonizer of island and so, are an adequate group for studying anthropogenic threats in insular systems [@matthews2022].
+Habitat change and biological invasion are some of the prevalent anthropogenic threats for island biotas [@leclerc2020a].
+Habitat alteration, such as urbanization affect native communities and invasive species affect directly and indirectly native birds [@spatz2017], which are generally key conservation targets.
 
-*Implication for oceanic islands*
+Invasive species have direct impact on native species, through predation and competition.
+In French Polynesia islands, declines of endemic monarchs are caused by nets predation from invasive black rats and are worsen by aggression from introduced red-vented bulbuls and common mynas [@thibault2002][@blanvillain2003][@thibault2018b].
+Moreover, introduced species acts as vectors of diseases, such as avian malaria that accentuated the declines of Hawaiian islands avifauna [@atkinson2014] and Fatu Hiva monarch in Marquesas islands [@igualibeltrán2026].
+Invasive plants, as *Miconia calvescens* have strong implication in modification of vegetation structure and diversity, or landscape composition in Tahiti, and may induces indirect effect on other biotic communities [@meyer1996][@thibault2018].
 
-In oceanic islands, ecological complexity is threatened by human pressure through urbanization and invasion.
-Soundscape study offers a good tool to monitor species invasion, extinction, and assemblage turnover [@farina2012; @ribeiro2022].
-Such example exist with the study of an invasive ant leading to impoverishment of the soundscape in New Caledonia forests [@gasc2018].
-Species assemblages interact acoustically and reflect a dynamic processes called an acoustic community [@lellouch2014; @farina2016].
-Acoustic communities are modified by non-native species introduction, with strong implications for native species acoustic habitat and their soundtope quality [@farina2014; @merchant2015].
-The soundtope represent the acoustic pattern created by the distribution of biophony emissions [@farina2014].
-Whereas the acoustic habitat encompass the soundtope and add the environmental acoustic conditions in which the species assemblage is leaving [@merchant2015; @farina2016].
+Habitat alteration and biological invasion are positively correlated threats [@liu2023][@marino2026].
+That have driven several species to extinction and threatened others in islands [@matthews2022] [@steadman1995].
+Going forward, climate change is likely to join them as a prevalent threat for the biota of insular systems [@leclerc2020; @marino2026].
 
-*Acoustic implication*
+Parag 3: Birds and the soundscape; a continental bias
 
-Recent studies have pointed out the potential importance of invasive species as an under appreciated source of novel noise, that could alter acoustic communication among native species [@hopkins2022] [@hunt2024].
-In the context of oceanic island, diminished bird richness reflect fewer vocalizing species, resulting in less saturated soundscapes than mainland [@robert2019].
-So, acoustic interference are anticipated to lessened on islands.
-Yet, introduction of non-native species are numerous and are expected to continue to increase in islands [@seebens2017].
-Compared to native species, loudness and high occurrence rate of vocalization can be characteristic for invasive species [@hopkins2022].
-For example, over the course of one year, invasive Pekin Robins (*Leiothrix lutea*) calls made up 37% of all bird songs in a shrubland of their invaded range in Europe [@farina2013].
-Likewise, calls of invasive birds such as Common Mynas (*Acridotheres tristis*) seem to dominate the urban environments they have invaded (personal information in [@hopkins2022]).
-Plus, timing of calls between native and invasive species are very similar, and may creates overlap, important for acoustic competition [@farina2013; @bleach2015a]
+• Birds are also a major focus of bioacoustics and soundscape ecology, and are key contributors to the biophony.
+• The effects of habitat change, especially urbanisation, on soundscapes have been studied mostly in continental contexts • These effects are much less well established on islands
 
-This novel noises are quite attuned to mask vital information encoded in acoustic signals, and may impact frequencies, reduce perception and discrimination [@lohr2003].
-This masking effect can negatively affect communication, movement, vigilance, mating and foraging [@shannon2016].
-Affecting individual survival and reproductive success [@halfwerk2011; @medeiros2017].
-Therefore, the calls of non-native species, can bring a significant avenue for acoustic competition with native species and may dominate the insular soundscape and favored it's homogenization [@farina2013].
-Still, evidence in oceanic island are scarce and need further investigation [@hopkins2022; @hunt2024].
+Within terrestrial soundscapes, birds are with insects, the main contributors to biophony [@phillips2018].
+Consequently, they are the most studied taxa in soundscape study [@turlington2024] and are over-represented in papers investigating bioacoustic [@shannon2016].
 
-*Problematisation*
+Habitat alteration, especially urbanization emits anthropogenic noise that have acoustic consequences through masking effect for birds [@shannon2016].
+The latter, strongly alter soundscape variations [@pijanowski2011].
+Alternatively, invasive species introduce novel noises, increasing diversity of the soundscape.
+As anthropogenic noise, they can be frequent, or of very long duration, or both [@hopkins2022].
+Invasive call can be loud [@farina2013], overlap in sound properties, match acoustic temporal periods with native bird calling [@azar2016][@hunt2024].
+Moreover, invasive predator can alter entire avian community and their biophony, like the invasive brown tree snake that is responsible for Guam’s “silent forests” [@rogers2017].
 
-Here, we sought to investigate patterns variation of signal emissions at the acoustic habitat and soundtope level in relation to native/non-native bird assemblage and habitat factors.
-We predicted that urbanization gradients drives relevant acoustic indices results for the acoustic habitat level [@fairbrass2017].
-We also predicted that differences in bird assemblage compel the variation at the soundtope level, and that non-native species in these assemblages have higher implication in acoustic indices computation compared to native species.
-Given that urbanization gradient and non-native dominated assemblage represents a combined effect on oceanic islands [@soares2021].
-We expect that urban sites have more saturated and complex soundscape patterns due to both factors compared to deep forested sites.
+Although most of the world’s biodiversity is concentrated in tropical areas, habitat change impact on soundscape have mostly been studied in temperate contexts [@scarpelli2020] [@sugai2019] [@deichmann2018a].
+Recent studies have pointed out the importance of invasive species as an under appreciated source of novel noise, that could alter bioacoustic components among native species [@hopkins2022].
+Still, current knowledge of invasive species effect on the soundscape is scarce and mostly focused on one or a few species at a time (see [@azar2016]).
+These effects are even much less established in tropical island [@turlington2024].
+Despite being strongly threatened by human dominated areas and having important pool of mixed native and exotic avian species [@leclerc2020a].
+
+Parag 4: The knowledge gap
+
+• Less considered is how habitat change and introduced birds combine do alter the soundscape • Why it matters: consequences for how humans perceive the soundscape (e.g., wellbeing, cultural value) and for how native birds perceive it (masking, acoustic niche, communication) • On islands where introduced species often largely dominate the bird community, at least in some habitats, how they reshape the soundscape is unclear
+
+Within islands, diminished bird richness reflect fewer vocalizing species, resulting in less saturated soundscape than mainland [@robert2019].
+Acoustic interference are anticipated to lessened in insular systems.
+Yet, introduced species are numerous and are expected to increase in insular systems [@seebens2017].
+Introduced bird often dominate the acoustic environment they have invaded [@farina2013], personal observation from [@hopkins2022].
+Yet, their impact on soundscape are unclear and studies on native and exotic mixed avian community are limited [@azar2016][@hunt2024].
+
+Therefore, habitat changes and biological invasions could have potential consequences for bird conspecific communication [@hopkins2022].
+In addition, bird biophony are also important for how people perceive exotic species and has strong implication for acoustic cultural heritage [@farina2012].
+It is important to assess their impacts on insular soundscape, as these threats arise as combine effect in islands.
+
+Parag 5: Study system and objectives
+
+• Tahiti is an ideal place to address this: several valleys that serve as replicates, strong gradients of urbanisation (and altitude), and associated variation in the composition of both native and introduced bird communities • We captured this variation with our recorder deployment design, characterised the bird community using point counts, and extracted acoustic indices at each site • Objective: measure the effects of habitat and introduced birds on the soundscape using acoustic indices • Prediction: we expected invasive birds to occupy a significant part of the biophonic soundscape overall, and especially in altered habitats, with an opposite pattern for native species, which contribution to the soundscape may even be negligible or undetectable
+
+Tahiti is an ideal place to address the question.
+With a strong habitat gradients, limited native avian communities and numerous introduced bird species, it allows to explore habitat alteration and introduced birds influence on the soundscape.
+Today, seven terrestrial native bird species remains and 12 introduced bird species have been introduced successfully [@thibault2017].
+There is a noticeable spatial variation in the abundance and composition of introduced and native species communities across the island.
+
+Here, across valleys with elevation gradients that serves as replicates, we sought to investigate the effects of habitat modification and bird assemblage gradients on the global soundscape and bird biophony of Tahiti.
+Using passive acoustic recorders, we characterized the variation of bird community composition from audio point counts, and extracted acoustic indices to describe soundscape variation.
+We expected introduced birds to occupy a significant part of bird biophony overall, especially in altered habitats, while human-dominated habitat have major implication of global soundscape [@fairbrass2017][@hopkins2022].
+Conversely, we predicted an opposite pattern for native species, which contribution to bird biophony may even be negligible or undetectable.
 
 # Methods
 
 *Study area*
 
-The study was conducted in Tahiti, French Polynesia.
-Tahiti is the largest (1,042 km²) island of French Polynesia [@monnet1993].
-The climate is tropical with an average annual temperature of 26,5 °C and annual rainfall of 1700 mm in the coastal plain of the leeward coast of Tahiti Nui, reaching 4000 mm on the windward coast and Tahiti Iti, and up to 8000 mm in the center of Tahiti Nui (Laurent source qu'est ce qui est pertinent, atlas meteorologique quels accès?).
-Islands of the Pacific ocean undergoed strong impoverishment with numerous bird extinctions due to first Polynesian arrival in the 13th century and Europeans in the 18th century (Thibault 1988)[@bellwood1978; @monnet1993; @steadman1995].
-From 1960 to 1990, strong habitat modification took places due to development, coastal urbanization and forest clearance (Blanchet 1986)[@monnet1993].
-In Tahiti "..." terrestrial bird species occurs, 12 of them are non-native [@thibault2017].
-Introduced birds have generally the highest densities in lowland, non-forested habitats such as urban areas or agricultural fields, and lower densities in high-elevation, contiguous forest, where native birds resides [@soares2021].
-Similar pattern is observed in Tahiti [@monnet1993] (besoin source moins loin pour Tahiti or personal observation).
+We conducted the study in Tahiti, the largest (1,042 km²) and highest (2241 m) island of French Polynesia.
+The climate is tropical with an average annual minimum temperature of 23.5 °C and maximum of 30.3 °C, with an annual rainfall average of 1578.8 mm on the western coast (Faaa) and 3234.7 mm on the eastern part of the island (Tapearu-est) (Météo-France).
+Tahiti as other island of the Pacific ocean, underwent widespread stress on its terrestrial systems following first human colonization around the 10 th century [@kahn2015; @stevenson2017] and accentuated with Europeans arrival from the 18 th to the 19 th century [@pearson1970].
+Still, peak habitat changes occurred from 1960 to 1990, due to development, coastal and lowland urbanization and forest clearance around estuaries [@bon2005].
+Urban surfaces in Tahiti reached 30% in 2005, mainly concentrated on the coastline, but extended and gained heights since (DIREN, 2019).
+
+Three main habitat types are distinguished in Tahiti.
+First, Tahiti is highly urbanized along the coastline, thus certain areas are much more developed than others, especially with expansive urbanisation around Papeete in the North-North West.
+Second, mixed sub-urban and open areas with moderate built-up, open vegetation located in the limits of expanding zone of the coastline and heights.
+Complemented by some agriculture, including cattle fields and horticulture on the plateaus of the peninsula and crop cultivation in the lowlands and large plains areas of Tahiti's West and East coast.
+Then, a mostly forested inland, shaped by valleys with an interior difficult to access and elevated, though largely invaded by introduced plants [@meyer1996] [@larrue2016].
+
+Colonization of the island lead to hunting, habitat alteration and predator-competitor introduction, responsible for bird impoverishment and extinctions [@diamond1989][@leclerc2020a].
+Data on extent of extinction are scarce, [@steadman1995] estimated from bones that on average, ten species of seabirds and landbirds combined have been lost per Oceania's major island.
+In Tahiti, four species are known to be extinct since the arrival of humans, 2 rails, 1 sandpiper and 1 parakeet species [@birdsof2026].
+Nowadays, Tahiti has 19 land bird species, with 12 of them that are introduced [@thibault2017].
+Non-native birds have their highest densities in lowland, non-forested habitats such as urban areas or agricultural fields, and lower densities in high-elevation, contiguous forest, where native birds seem to have found refuge [@monnet1993] [@thibault2017] [@thibault2018a].
 
 *Acoustic data collection*
 
-Passive acoustic data was collected using SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA) from 2024 to 2026.
-In total, 69 sites from different habitat types ( Forest = , ... rural or suburban = , .. Urban = ) were surveyed in valleys along an attitudinal gradients.
-Stations recorded along the same valley's gradient have staggering dates, except for "O_Belvedere" were additional recording were conducted.
-Acoustic recording units (ARUs) were programmed to record continuously and placed at 1,5 meters above the ground.
-Devices recorded for "..." per station, with a total of "..." hours recorded.
-Recordings were made as .WAV files with a "..." Hz sampling rate and gain of "..." dB, with monophonic and 16 Bits formats.
+We collected passive acoustic data using SongMeter SM2 and SM4 microphones (Wildlife Acoustics, Maynard, MA, USA) across XX 2024 - XX 2026 period.
+In total, 76 sites of different habitat types ( Forest = , ... open rural, suburban = , .. Urban = ) were surveyed along attitudinal gradients in valleys.
 
-*Soundscape index metrics*
-
-We selected nine relevant acoustic indices to encompass the sonic emissions heterogeneity for the acoustic habitat and the soundtope of each sampling site.
-Choice of indices were based on their relevance to reflect patterns of variability, heterogeneity, complexity of both soundscape level.
-The use of several acoustic indices was prioritize as multi-index analysis have been shown to be more effective than single index investigations [@bradfer-lawrence2020].
-Acoustic indices were estimated for each 10-min recordings.
-We used indices median output per hour for better control of index variation [@bradfer-lawrence2019].
-Acoustic indices output were normalized to facilitate comparisons.
-
-Two different frequency limits were applied for the upper limit and a low frequency threshold for devices glitches.
-For the soundtope the limit was (... Hz) to reflect Tahiti bird community emissions.
-Recordings containing rainfall sounds were excluded from the calculation at this soundscape level.
-For the acoustic habitat, the limit was (... Hz) to encompass all sonic emissions that could affect the bird assemblages.
-Recording containing rainfall sounds were included in the calculation at this soundscape level.
-All indices were estimated using the default settings with the packages ‘soundecology’ (...) and seewave (...) packages in R (..).
-
-(Table used for soundscape and bird acoustic community monitoring, with hypothesis)
+We placed acoustic recording units (ARUs) with minimal 200 meter distance between each-other.
+Devices were placed through semi-random placement depending on accessibility and minimal discretion.
+ARUs were programmed to record continuously and placed at 1,5 meters above ground.
+Devices recorded in average "..." per station, with a total of "..." hours recorded.
+Recordings were made as .WAV files with a "..." Hz sampling rate and gain of "..." dB, with monophonic and 16 Bits format.
 
 *Habitat metrics*
 
-Two metrics, the Hard Surface Area (HSA) and the open herbaceous cover (HERB) were chosen to reflect habitat types and heterogeneity along the attitudinal gradients.
-HSA and HERB ranges between 0 and 100 %.
-Respectively, higher values indicates the important cover of human-modified surfaces and open herbaceous areas.
-Habitat covers map was estimated using polygon surfaces in 100 meter radius circle around each ARUs positions in Google Earth (Google Earth Pro.7.3.7.1327).
+We aimed at characterizing variation in both urbanization and habitat openness (to distinguish between open and forested habitats) across sites.
+To that aim, we extracted two metrics from satellite images available in Google Earth (Google Earth Pro.7.3.7.1327; images dated from 2023 and 2025, © Airbus).
+[T]{.underline}he Hard Surface Area (HSA) measures the percentage (from 0 to 100%) of hard surfaces (buildings, roads) in a given area and was used as a proxy for urbanization; the Herbaceous Cover (HERB) measures the percentage (from 0 to 100%) of open herbaceous areas.
+We measured HSA and HERB by drawing polygons around each habitat patch (hard surfaces, open herbaceous and forested) in 100 meter radius circles around each ARUs.
+The 100m radius scale size was selected to reflect local site urbanization and openness.
+While reflecting the main habitat types in which detected land bird vocalization or anthropic sounds find their sources.
 
-*Avian caracterisation*
+*Soundscape index metrics*
 
-Two ten minute aural and visual identification in acoustic recordings was conducted for each site, to obtain bird richness count.
-Identification were conducted from 06:00 am to 06:10 am in recordings free of rainfall or strong acoustic disturbance.
-From the aural identification database, several assemblage metrics were derived: total richness (count), non-native richness (count), presence of native bird (binomial), presence of Myna (binomial).
-Non-native bird species encountered were "...".
-Native bird species were "...".
+We selected nine acoustic indices to encompass the sonic emissions of Tahiti.
+We based indices choice on their relevance to reflect the variability, heterogeneity and complexity of the global soundscape and the bird biophony for each sites.
+The multi-index approach was prioritized as it has been shown to be more effective than single index investigations [@bradfer-lawrence2020].
+We estimated each acoustic indices for 10-min period and used hourly indices median value for better control of index variation [@bradfer-lawrence2019].
+We normalized outputs to facilitate comparisons.
 
-*Bird assemblage metrics in response to habitat characteristic analysis*
+We estimated acoustic indices for two upper frequency limits, one in order to reflect the global soundscape and the second for bird biophony.
+While we applied a low frequency threshold for devices glitches.
+For the global soundscape, the upper limit was (... Hz) and we included recording containing rainfall to encompass all sonic emissions of the environment.
+For bird biophony the upper limit was (... Hz) and we filtered recordings containing rainfall sounds to focus solely on birds sonic emissions.
+We identified rainfall recordings with hardrains package in R [@metcalf2020].
+All indices were estimated using the default settings with ‘soundecology’ (...) and seewave (...) packages in R (..).
 
-Habitat as direct driver of bird assemblage was investigated.
-Bird assemblage metrics were modeled independently as responses variables using "..." for or "..." for "..." distributions using the habitat metrics and altitude as independent fixed variables.
-All generalized linear mixed-effects models (GLMER) were made using the "GlmmTMB" package [@brooks2017].
+*To do: (Table used for soundscape and bird acoustic community monitoring, with hypothesis)*
 
-*Acoustic indices in response to bird assemblage and habitat metrics analysis*
+*Bird community characterisation*
+
+We conducted two ten minutes audio point count in acoustic recordings from 06:00 to 06:10 am.
+We carried out identifications in recordings free of rainfall, wind or consistant-strong anthropogenic disturbance.
+If we detected acoustic perturbation, the next day was used instead and so on.
+We merged bird species detected in the two recording per site to obtain four bird assemblage metric : the total richness (count), introduced richness (count), presence of native bird (binomial) and presence of Common Myna (*Acridotheres tristis*) (binomial).
+We considered the presence/absence of native species rather than their richness since their richness varied between 0 and XX, with only XX sites where more than 2 natives species were detected.
+Non-native bird encountered were "...".
+Native bird species were "..." (Supplementary material).
+
+*To do: In any case, we should show an analysis of repeatability, testing whether the variables describing the bird community are consistent across the two counts (package rptR, allowing to use different distribution, including binomial and poisson).*
+
+*Variation in bird community structure across habitats*
+
+We first aimed at characterizing the effect of habitat and elevation on bird communities.
+To that aim, we built linear mixed-effect models to test whether the total richness and non-native richness (used as sequential response variables), were predicted by our two habitat variables (HSA and HERB).
+We also included altitude as covariable.
+We built generalized linear mixed-effect models for presence of native birds species or presence of common mynas with the same predictive variables.
+For count variable we used a XX distribution and a binomial distribution with a logit function for presence-absence response variable.
+Each model included a random fixed effect for the commune.
+All models were made using the “GlmmTMB” package [@brooks2017].
+
+*Variation in acoustic indices according to bird community structure and habitat*
 
 Prior to analysis, acoustic indices output were tested for correlations.
 
-To investigate if acoustic indices reflect metrics of native/non native bird assemblage, GLMER were used to model each acoustic index (...) individually as response variable, for both acoustic habitat and soundtope level.
-In response to the following independent variables: one assemblage metric at a time and habitat metrics.
+To investigate whether acoustic indices varied according to the bird community composition, we used GLMER to model each acoustic index (...) as response variable.
+That, to test whether acoustic indices outputs at both the global soundscape and bird biophony were predicted by one of the bird assemblage and our two habitat gradients.
 All models included a control fixed effect for the time (hour of the day) to account for temporal autocorrelation and random fixed effects for the site and commune.
-Models used a "..." distribution with a "..." function.
+For XX and XX indices outputs we used a "..." distribution with a "..." function.
 All statistical analyses were performed in R v.().

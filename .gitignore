@@ -12,7 +12,13 @@
 *.png
 *.docx
 *.xlsx
-
+*Occupation_du_sol_BD_TOPO_-2707977541932032105/
+*maps/
+*data/REL_Ligne_de_relief.shp
+*data/REL_Ligne_de_relief.shx
+*data/REL_Ligne_de_relief.dbf
+*data/REL_Ligne_de_relief.prj
+*data/REL_Ligne_de_relief.cpg
 
 /.quarto/
 **/*.quarto_ipynb
